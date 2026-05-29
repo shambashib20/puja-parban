@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookings — PujaParban Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="admin-layout">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo"><img src="../assets/logo.jpeg" alt="Puja Parban" class="sidebar-logo-img" /></div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Main</div>
+      <a href="index.html" class="sidebar-link"><span class="icon">📊</span> Dashboard</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Manage</div>
+      <a href="priests.html" class="sidebar-link"><span class="icon">🧘</span> Priests<span class="sidebar-badge">24</span></a>
+      <a href="bookings.html" class="sidebar-link active"><span class="icon">📅</span> Bookings<span class="sidebar-badge">8</span></a>
+      <a href="services.html" class="sidebar-link"><span class="icon">🪔</span> Services</a>
+      <a href="blog.html" class="sidebar-link"><span class="icon">📝</span> Blog</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">System</div>
+      <a href="#" class="sidebar-link"><span class="icon">👥</span> Users</a>
+      <a href="#" class="sidebar-link"><span class="icon">⭐</span> Reviews</a>
+      <a href="#" class="sidebar-link"><span class="icon">⚙️</span> Settings</a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="sidebar-user-avatar">A</div>
+      <div><div class="sidebar-user-name">Admin User</div><div class="sidebar-user-role">Super Admin</div></div>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <h2>Bookings</h2>
+        <p>View and manage all customer bookings</p>
+      </div>
+      <div class="topbar-right">
+        <a href="../index.html" class="back-link">← View Site</a>
+        <button class="btn btn-outline" onclick="alert('Export feature coming soon')">⬇️ Export CSV</button>
+      </div>
+    </div>
+
+    <div class="page-content">
+
+      <!-- Stats row -->
+      <div class="stats-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:16px;">
+        <div class="stat-card stat-blue">
+          <div><div class="stat-value">8</div><div class="stat-label">Pending</div></div>
+          <div class="stat-icon">⏳</div>
+        </div>
+        <div class="stat-card stat-green">
+          <div><div class="stat-value">42</div><div class="stat-label">Confirmed</div></div>
+          <div class="stat-icon">✅</div>
+        </div>
+        <div class="stat-card stat-purple">
+          <div><div class="stat-value">18</div><div class="stat-label">Completed</div></div>
+          <div class="stat-icon">🎉</div>
+        </div>
+        <div class="stat-card" style="border-color:var(--border);">
+          <div><div class="stat-value">3</div><div class="stat-label">Cancelled</div></div>
+          <div class="stat-icon" style="background:#fee2e2;">❌</div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="card" style="margin-bottom:16px;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <div class="search-bar" style="flex:1;min-width:200px;">
+            <span>🔍</span>
+            <input type="text" placeholder="Search by customer, service, priest…" />
+          </div>
+          <input class="form-control" type="date" style="width:160px;" />
+          <select class="form-control" style="width:160px;" onchange="filterBookings(this.value)">
+            <option value="">All Status</option>
+            <option value="Pending">Pending</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Completed">Completed</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">All Bookings</span>
+          <div class="tabs" style="margin-bottom:0;border:none;">
+            <div class="tab active" onclick="switchBookingTab(this,'all')">All</div>
+            <div class="tab" onclick="switchBookingTab(this,'Pending')">Pending</div>
+            <div class="tab" onclick="switchBookingTab(this,'Confirmed')">Confirmed</div>
+            <div class="tab" onclick="switchBookingTab(this,'Completed')">Completed</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Customer</th>
+                <th>Service</th>
+                <th>Priest</th>
+                <th>Date &amp; Time</th>
+                <th>Location</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="bookingsTbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+<!-- BOOKING DETAIL MODAL -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title" id="modalTitle">Booking Details</h3>
+      <button class="modal-close" onclick="closeModal('bookingModal')">✕</button>
+    </div>
+    <div id="modalContent"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('bookingModal')">Close</button>
+      <button class="btn btn-primary" onclick="alert('Booking confirmed!');closeModal('bookingModal')">Confirm Booking</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const bookings = [
+  { id:'BK001', customer:'Soumen Das', city:'Kolkata', service:'Griha Pravesh', priest:'Pandit Arindam Chakraborty', date:'29 May 2025', time:'10:00 AM', amount:1000, status:'Confirmed' },
+  { id:'BK002', customer:'Priya Sharma', city:'Howrah', service:'Durga Puja', priest:'Unassigned', date:'30 May 2025', time:'06:00 AM', amount:1500, status:'Pending' },
+  { id:'BK003', customer:'Rahul Banerjee', city:'Durgapur', service:'Namkaran', priest:'Pandit Somnath Acharjee', date:'31 May 2025', time:'11:00 AM', amount:600, status:'Assigned' },
+  { id:'BK004', customer:'Meena Roy', city:'Kolkata', service:'Laxmi Puja', priest:'Unassigned', date:'01 Jun 2025', time:'04:00 PM', amount:700, status:'Pending' },
+  { id:'BK005', customer:'Arnab Ghosh', city:'Siliguri', service:'Marriage Puja', priest:'Pandit Tapan Shastri', date:'02 Jun 2025', time:'09:00 AM', amount:2000, status:'Confirmed' },
+  { id:'BK006', customer:'Susmita Dey', city:'Asansol', service:'Satyanarayan Puja', priest:'Pandit Debabrata Mishra', date:'25 May 2025', time:'07:00 AM', amount:1200, status:'Completed' },
+  { id:'BK007', customer:'Dipak Sen', city:'Kolkata', service:'Kali Puja', priest:'Pandit Subhankar Bhattacharya', date:'24 May 2025', time:'05:00 PM', amount:800, status:'Completed' },
+  { id:'BK008', customer:'Rinku Mondal', city:'Howrah', service:'Annaprashan', priest:'Unassigned', date:'28 May 2025', time:'10:30 AM', amount:650, status:'Cancelled' },
+];
+
+const statusBadge = s => {
+  const m = { Confirmed:'badge-success', Pending:'badge-warning', Assigned:'badge-info', Completed:'badge-purple', Cancelled:'badge-danger' };
+  return `<span class="badge ${m[s]||'badge-purple'}">${s}</span>`;
+};
+
+let currentBookings = [...bookings];
+
+function renderBookings(data) {
+  document.getElementById('bookingsTbody').innerHTML = data.map(b => `
+    <tr>
+      <td style="font-weight:700;color:var(--purple);">${b.id}</td>
+      <td>
+        <div class="avatar-cell">
+          <div class="table-avatar">${b.customer[0]}</div>
+          <div>
+            <div class="cell-name">${b.customer}</div>
+            <div class="cell-sub">📍 ${b.city}</div>
+          </div>
+        </div>
+      </td>
+      <td>${b.service}</td>
+      <td style="font-size:.82rem;">${b.priest}</td>
+      <td><div>${b.date}</div><div style="font-size:.75rem;color:var(--text-muted);">${b.time}</div></td>
+      <td>${b.city}</td>
+      <td style="font-weight:700;">₹${b.amount}</td>
+      <td>${statusBadge(b.status)}</td>
+      <td>
+        <div style="display:flex;gap:6px;">
+          <button class="btn btn-sm btn-primary" onclick="showDetails('${b.id}')">View</button>
+          ${b.status === 'Pending' ? `<button class="btn btn-sm btn-gold" onclick="alert('Assigning priest for ${b.id}…')">Assign</button>` : ''}
+        </div>
+      </td>
+    </tr>
+  `).join('');
+}
+
+renderBookings(bookings);
+
+function filterBookings(status) {
+  renderBookings(status ? bookings.filter(b => b.status === status) : bookings);
+}
+
+function switchBookingTab(el, tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderBookings(tab === 'all' ? bookings : bookings.filter(b => b.status === tab));
+}
+
+function showDetails(id) {
+  const b = bookings.find(x => x.id === id);
+  document.getElementById('modalTitle').textContent = `Booking ${b.id}`;
+  document.getElementById('modalContent').innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div><div class="form-label">Customer</div><strong>${b.customer}</strong></div>
+      <div><div class="form-label">City</div>${b.city}</div>
+      <div><div class="form-label">Service</div>${b.service}</div>
+      <div><div class="form-label">Priest</div>${b.priest}</div>
+      <div><div class="form-label">Date</div>${b.date}</div>
+      <div><div class="form-label">Time</div>${b.time}</div>
+      <div><div class="form-label">Amount</div><strong style="color:var(--purple)">₹${b.amount}</strong></div>
+      <div><div class="form-label">Status</div>${statusBadge(b.status)}</div>
+    </div>
+  `;
+  document.getElementById('bookingModal').classList.add('open');
+}
+
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+</script>
+</body>
+</html>

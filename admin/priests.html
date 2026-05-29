@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priests — PujaParban Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<div class="admin-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo"><img src="../assets/logo.jpeg" alt="Puja Parban" class="sidebar-logo-img" /></div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Main</div>
+      <a href="index.html" class="sidebar-link"><span class="icon">📊</span> Dashboard</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Manage</div>
+      <a href="priests.html" class="sidebar-link active"><span class="icon">🧘</span> Priests<span class="sidebar-badge">24</span></a>
+      <a href="bookings.html" class="sidebar-link"><span class="icon">📅</span> Bookings<span class="sidebar-badge">8</span></a>
+      <a href="services.html" class="sidebar-link"><span class="icon">🪔</span> Services</a>
+      <a href="blog.html" class="sidebar-link"><span class="icon">📝</span> Blog</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">System</div>
+      <a href="#" class="sidebar-link"><span class="icon">👥</span> Users</a>
+      <a href="#" class="sidebar-link"><span class="icon">⭐</span> Reviews</a>
+      <a href="#" class="sidebar-link"><span class="icon">⚙️</span> Settings</a>
+    </div>
+    <div class="sidebar-footer">
+      <div class="sidebar-user-avatar">A</div>
+      <div><div class="sidebar-user-name">Admin User</div><div class="sidebar-user-role">Super Admin</div></div>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <h2>Priests</h2>
+        <p>Manage all registered priests on the platform</p>
+      </div>
+      <div class="topbar-right">
+        <a href="../index.html" class="back-link">← View Site</a>
+        <button class="btn btn-primary" onclick="openModal('addPriestModal')">➕ Add Priest</button>
+      </div>
+    </div>
+
+    <div class="page-content">
+
+      <!-- Filters -->
+      <div class="card" style="margin-bottom:16px;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <div class="search-bar" style="flex:1;min-width:200px;">
+            <span>🔍</span>
+            <input type="text" placeholder="Search priests by name, city…" oninput="filterPriests(this.value)" />
+          </div>
+          <select class="form-control" style="width:160px;" onchange="filterByStatus(this.value)">
+            <option value="">All Status</option>
+            <option>Active</option>
+            <option>Busy</option>
+            <option>Inactive</option>
+          </select>
+          <select class="form-control" style="width:180px;">
+            <option value="">All Specializations</option>
+            <option>Griha Pravesh</option>
+            <option>Marriage Puja</option>
+            <option>Durga Puja</option>
+            <option>Namkaran</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Priests Table -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">All Priests (24)</span>
+          <div class="tabs" style="margin-bottom:0;border:none;">
+            <div class="tab active" onclick="switchTab(this,'all')">All</div>
+            <div class="tab" onclick="switchTab(this,'active')">Active</div>
+            <div class="tab" onclick="switchTab(this,'pending')">Pending Verification</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="priestsTable">
+            <thead>
+              <tr>
+                <th>Priest</th>
+                <th>Specializations</th>
+                <th>Experience</th>
+                <th>Rating</th>
+                <th>Bookings</th>
+                <th>Base Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="priestsTbody">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+<!-- ADD PRIEST MODAL -->
+<div class="modal-overlay" id="addPriestModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Add New Priest</h3>
+      <button class="modal-close" onclick="closeModal('addPriestModal')">✕</button>
+    </div>
+    <div class="form-row cols-2">
+      <div class="form-group">
+        <label class="form-label">Full Name *</label>
+        <input class="form-control" type="text" placeholder="Pandit Name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number *</label>
+        <input class="form-control" type="tel" placeholder="+91 XXXXXXXXXX" />
+      </div>
+    </div>
+    <div class="form-row cols-2">
+      <div class="form-group">
+        <label class="form-label">City *</label>
+        <select class="form-control">
+          <option>Kolkata</option>
+          <option>Howrah</option>
+          <option>Durgapur</option>
+          <option>Siliguri</option>
+          <option>Asansol</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Experience (Years) *</label>
+        <input class="form-control" type="number" placeholder="e.g. 10" />
+      </div>
+    </div>
+    <div class="form-row cols-2">
+      <div class="form-group">
+        <label class="form-label">Base Price (₹) *</label>
+        <input class="form-control" type="number" placeholder="e.g. 800" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Primary Specialization</label>
+        <select class="form-control">
+          <option>Griha Pravesh</option>
+          <option>Marriage Puja</option>
+          <option>Durga Puja</option>
+          <option>Kali Puja</option>
+          <option>Namkaran</option>
+          <option>Annaprashan</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Bio</label>
+        <textarea class="form-control" rows="3" placeholder="Brief description of priest's background and expertise…"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('addPriestModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="alert('Priest added successfully!');closeModal('addPriestModal')">Add Priest</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const priests = [
+  { id:1, name:'Pandit Subhankar Bhattacharya', city:'Kolkata', exp:'10+ yrs', rating:4.8, bookings:42, price:800, status:'Active', specs:'Griha Pravesh, Satyanarayan' },
+  { id:2, name:'Pandit Tapan Shastri', city:'Howrah', exp:'8+ yrs', rating:4.7, bookings:31, price:700, status:'Busy', specs:'Marriage Puja, Namkaran' },
+  { id:3, name:'Pandit Arindam Chakraborty', city:'Kolkata', exp:'12+ yrs', rating:4.9, bookings:48, price:1000, status:'Active', specs:'Durga Puja, Kali Puja' },
+  { id:4, name:'Pandit Debabrata Mishra', city:'Durgapur', exp:'15+ yrs', rating:4.8, bookings:38, price:1200, status:'Active', specs:'All Pujas' },
+  { id:5, name:'Pandit Somnath Acharjee', city:'Siliguri', exp:'7+ yrs', rating:4.5, bookings:26, price:600, status:'Active', specs:'Laxmi Puja, Annaprashan' },
+  { id:6, name:'Pandit Kaushik Mukherjee', city:'Kolkata', exp:'5+ yrs', rating:4.3, bookings:18, price:550, status:'Inactive', specs:'Namkaran, Griha Pravesh' },
+  { id:7, name:'Pandit Biswajit Ganguly', city:'Howrah', exp:'9+ yrs', rating:4.6, bookings:35, price:750, status:'Active', specs:'Marriage Puja' },
+  { id:8, name:'Pandit Ratan Chakraborty', city:'Asansol', exp:'11+ yrs', rating:4.7, bookings:29, price:850, status:'Pending', specs:'Durga Puja, Satyanarayan' },
+];
+
+function statusBadge(s) {
+  const map = { Active:'badge-success', Busy:'badge-warning', Inactive:'badge-danger', Pending:'badge-info' };
+  return `<span class="badge ${map[s]||'badge-purple'}">${s}</span>`;
+}
+
+function renderPriests(data) {
+  const tbody = document.getElementById('priestsTbody');
+  tbody.innerHTML = data.map(p => `
+    <tr>
+      <td>
+        <div class="avatar-cell">
+          <div class="table-avatar">${p.name[7]}</div>
+          <div>
+            <div class="cell-name">${p.name}</div>
+            <div class="cell-sub">📍 ${p.city}</div>
+          </div>
+        </div>
+      </td>
+      <td style="font-size:.78rem;max-width:160px;">${p.specs}</td>
+      <td>${p.exp}</td>
+      <td class="rating">⭐ ${p.rating}</td>
+      <td>${p.bookings}</td>
+      <td style="font-weight:700;">₹${p.price}</td>
+      <td>${statusBadge(p.status)}</td>
+      <td>
+        <div style="display:flex;gap:6px;">
+          <button class="btn-icon btn" onclick="alert('Edit: ${p.name}')">✏️</button>
+          <button class="btn-icon btn" onclick="alert('View details: ${p.name}')">👁️</button>
+          <button class="btn-icon btn" style="color:var(--danger);" onclick="confirmDelete('${p.name}')">🗑️</button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
+}
+
+renderPriests(priests);
+
+function filterPriests(q) {
+  const filtered = priests.filter(p => p.name.toLowerCase().includes(q.toLowerCase()) || p.city.toLowerCase().includes(q.toLowerCase()));
+  renderPriests(filtered);
+}
+
+function filterByStatus(s) {
+  renderPriests(s ? priests.filter(p => p.status === s) : priests);
+}
+
+function confirmDelete(name) {
+  if (confirm(`Remove ${name} from the platform?`)) alert(`${name} removed.`);
+}
+
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+function switchTab(el, tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  if (tab === 'active') renderPriests(priests.filter(p => p.status === 'Active'));
+  else if (tab === 'pending') renderPriests(priests.filter(p => p.status === 'Pending'));
+  else renderPriests(priests);
+}
+</script>
+</body>
+</html>

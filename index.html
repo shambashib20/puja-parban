@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PujaParban — আপনার পুজোর জন্য সঠিক পুরোহিত</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="nav-brand" href="index.html">
+        <img src="assets/logo.jpeg" alt="Puja Parban" class="nav-logo" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#priests">Priests</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-login" onclick="alert('Login coming soon!')">Login</button>
+        <button class="btn-book" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">📅 Book Now</button>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMobileMenu()">Home</a>
+  <a href="#about" onclick="closeMobileMenu()">About Us</a>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#priests" onclick="closeMobileMenu()">Priests</a>
+  <a href="#blog" onclick="closeMobileMenu()">Blog</a>
+  <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <button class="btn btn-outline" onclick="alert('Login coming soon!'); closeMobileMenu()">Login</button>
+  <button class="btn btn-primary" onclick="closeMobileMenu()">📅 Book Now</button>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Left -->
+      <div>
+        <p class="hero-label">আপনার পুজোর জন্য</p>
+        <h1 class="hero-title">সঠিক পুরোহিত<br/>এখন এক ক্লিকে</h1>
+        <p class="hero-subtitle">
+          ঘরে বসেই বুক করুন অভিজ্ঞ ও ভেরিফাইড পুরোহিত।<br/>
+          সহজ, দ্রুত এবং নির্ভরযোগ্য পরিষেবা।
+        </p>
+        <div class="hero-trust">
+          <div class="hero-trust-item"><span class="icon">✅</span> Verified Priests</div>
+          <div class="hero-trust-item"><span class="icon">⏱️</span> On-time Service</div>
+          <div class="hero-trust-item"><span class="icon">🔒</span> Secure Payment</div>
+        </div>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">📅 Book a Priest Now</button>
+          <button class="btn btn-outline" onclick="alert('Connecting you to our team…')">📞 Call Consultation</button>
+        </div>
+        <p style="margin-top:10px;font-size:.78rem;color:var(--text-muted);">₹20 / minute consultation</p>
+      </div>
+
+      <!-- Right — Booking Card -->
+      <div class="booking-card" id="booking-form">
+        <h3>Book a Priest</h3>
+        <p>Simple, Fast &amp; Reliable</p>
+
+        <div class="form-group">
+          <label>🙏 Select Puja Type</label>
+          <select>
+            <option>Griha Pravesh</option>
+            <option>Durga Puja</option>
+            <option>Lakshmi Puja</option>
+            <option>Kali Puja</option>
+            <option>Namkaran</option>
+            <option>Annaprashan</option>
+            <option>Marriage Puja</option>
+            <option>Satyanarayan Puja</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>📅 Select Date</label>
+          <input type="date" value="2025-05-18" />
+        </div>
+        <div class="form-group">
+          <label>⏰ Select Time</label>
+          <select>
+            <option>06:00 AM</option>
+            <option selected>10:00 AM</option>
+            <option>12:00 PM</option>
+            <option>04:00 PM</option>
+            <option>06:00 PM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>📍 Your Location</label>
+          <select>
+            <option>Kolkata, West Bengal</option>
+            <option>Howrah, West Bengal</option>
+            <option>Durgapur, West Bengal</option>
+            <option>Asansol, West Bengal</option>
+            <option>Siliguri, West Bengal</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-find" onclick="alert('Finding best priests for you…')">Find Priest</button>
+
+        <div class="booking-social-proof">
+          <div class="avatars">
+            <span>S</span><span>R</span><span>A</span><span>M</span>
+          </div>
+          <p><strong>1000+</strong> Happy Customers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">✅</div>
+        <div>
+          <h4>Trusted &amp; Verified</h4>
+          <p>All priests are verified by our team</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📍</div>
+        <div>
+          <h4>Live Tracking</h4>
+          <p>Track your priest live on map</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💰</div>
+        <div>
+          <h4>Transparent Pricing</h4>
+          <p>No hidden charges, 100% transparency</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🎧</div>
+        <div>
+          <h4>24/7 Support</h4>
+          <p>We are always here to help you</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PRIESTS ===== -->
+<section class="section" id="priests">
+  <div class="container">
+    <div class="priests-header">
+      <h2 class="section-title">Our Verified Priests</h2>
+      <a href="#" class="view-all">View All Priests →</a>
+    </div>
+
+    <div class="priests-scroll">
+
+      <div class="priest-card">
+        <div class="priest-img">🧘</div>
+        <div class="priest-info">
+          <h4>Pandit Subhankar Bhattacharya</h4>
+          <p class="priest-exp">10+ Years Experience</p>
+          <div class="priest-rating">⭐ 4.8</div>
+          <p class="priest-price">From ₹800</p>
+          <button class="btn btn-primary" style="width:100%;margin-top:8px;padding:8px;font-size:.82rem;" onclick="alert('Booking Pandit Subhankar…')">Book Now</button>
+        </div>
+      </div>
+
+      <div class="priest-card">
+        <div class="priest-img">🧘</div>
+        <div class="priest-info">
+          <h4>Pandit Tapan Shastri</h4>
+          <p class="priest-exp">8+ Years Experience</p>
+          <div class="priest-rating">⭐ 4.7</div>
+          <p class="priest-price">From ₹700</p>
+          <button class="btn btn-primary" style="width:100%;margin-top:8px;padding:8px;font-size:.82rem;" onclick="alert('Booking Pandit Tapan…')">Book Now</button>
+        </div>
+      </div>
+
+      <div class="priest-card">
+        <div class="priest-img">🧘</div>
+        <div class="priest-info">
+          <h4>Pandit Arindam Chakraborty</h4>
+          <p class="priest-exp">12+ Years Experience</p>
+          <div class="priest-rating">⭐ 4.9</div>
+          <p class="priest-price">From ₹1000</p>
+          <button class="btn btn-primary" style="width:100%;margin-top:8px;padding:8px;font-size:.82rem;" onclick="alert('Booking Pandit Arindam…')">Book Now</button>
+        </div>
+      </div>
+
+      <div class="priest-card">
+        <div class="priest-img">🧘</div>
+        <div class="priest-info">
+          <h4>Pandit Debabrata Mishra</h4>
+          <p class="priest-exp">15+ Years Experience</p>
+          <div class="priest-rating">⭐ 4.8</div>
+          <p class="priest-price">From ₹1200</p>
+          <button class="btn btn-primary" style="width:100%;margin-top:8px;padding:8px;font-size:.82rem;" onclick="alert('Booking Pandit Debabrata…')">Book Now</button>
+        </div>
+      </div>
+
+      <div class="priest-card">
+        <div class="priest-img">🧘</div>
+        <div class="priest-info">
+          <h4>Pandit Somnath Acharjee</h4>
+          <p class="priest-exp">7+ Years Experience</p>
+          <div class="priest-rating">⭐ 4.5</div>
+          <p class="priest-price">From ₹600</p>
+          <button class="btn btn-primary" style="width:100%;margin-top:8px;padding:8px;font-size:.82rem;" onclick="alert('Booking Pandit Somnath…')">Book Now</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="priests-cta">
+      <button class="btn btn-outline" onclick="alert('Loading all priests…')">View All Priests</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="section how-it-works" id="how-it-works">
+  <div class="container">
+    <h2 class="section-title">How It Works?</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">📅</div>
+        <p class="step-label">Step 1</p>
+        <h4>Select Puja &amp; Date</h4>
+        <p>Choose the type of puja and select your date &amp; time</p>
+      </div>
+      <div class="step">
+        <div class="step-num">🧘</div>
+        <p class="step-label">Step 2</p>
+        <h4>We Assign a Priest</h4>
+        <p>We will assign the best priest for your puja</p>
+      </div>
+      <div class="step">
+        <div class="step-num">📍</div>
+        <p class="step-label">Step 3</p>
+        <h4>Track Live</h4>
+        <p>Track your priest live and know estimated arrival time</p>
+      </div>
+      <div class="step">
+        <div class="step-num">🪔</div>
+        <p class="step-label">Step 4</p>
+        <h4>Puja At Your Home</h4>
+        <p>Priest reaches your home and performs the puja</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section" id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🏠</span>
+        <span>Griha Pravesh</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">💍</span>
+        <span>Marriage Puja</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">👶</span>
+        <span>Namkaran</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🍚</span>
+        <span>Annaprashan</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🪔</span>
+        <span>Durga Puja</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">✨</span>
+        <span>Laxmi Puja</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🔱</span>
+        <span>Kali Puja</span>
+      </div>
+      <div class="service-card" style="background:var(--purple-light);" onclick="alert('Browse all 30+ services…')">
+        <span class="service-icon">➕</span>
+        <span>More Services</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonial-slider" id="testimonialSlider">
+
+      <div class="testimonial-card" id="slide-0">
+        <div class="testimonial-avatar">😊</div>
+        <div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            PujaParban এর মাধ্যমে খুব সহজেই পুরোহিত পেয়েছি।
+            পুরোহিত সময়মতো এসেছিলেন এবং খুব সুন্দরভাবে পুজো সম্পন্ন হয়েছে।
+            ধন্যবাদ PujaParban টিম।
+          </p>
+          <p class="testimonial-author">— Soumen Das, Kolkata</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card" id="slide-1" style="display:none;">
+        <div class="testimonial-avatar">😊</div>
+        <div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            অসাধারণ সার্ভিস! Griha Pravesh এর জন্য বুক করেছিলাম।
+            পুরোহিত এসে খুব সুন্দরভাবে পুজো করলেন। দাম একদম উচিত।
+            আবার বুক করব অবশ্যই।
+          </p>
+          <p class="testimonial-author">— Priya Sharma, Howrah</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card" id="slide-2" style="display:none;">
+        <div class="testimonial-avatar">😊</div>
+        <div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            মেয়ের নামকরণের জন্য Pandit Arindam কে বুক করেছিলাম।
+            সময়মতো এসে পুজো সম্পন্ন করলেন। পরিবারের সবাই খুশি।
+            PujaParban কে অনেক ধন্যবাদ।
+          </p>
+          <p class="testimonial-author">— Rahul Banerjee, Durgapur</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;">
+      <div class="slider-dots">
+        <div class="slider-dot active" onclick="goToSlide(0)"></div>
+        <div class="slider-dot" onclick="goToSlide(1)"></div>
+        <div class="slider-dot" onclick="goToSlide(2)"></div>
+      </div>
+      <button class="slider-arrow" onclick="nextSlide()">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section class="section" id="blog">
+  <div class="container">
+    <div class="blog-header">
+      <h2 class="section-title">Latest from Our Blog</h2>
+      <a href="#" class="view-all">View All Blogs →</a>
+    </div>
+    <div class="blog-grid">
+
+      <div class="blog-card">
+        <div class="blog-img">
+          🪔
+          <span class="blog-date">10 May 2025</span>
+        </div>
+        <div class="blog-content">
+          <h4>পুষ্পদেব পূজার নিয়ম</h4>
+          <p>পুষ্পদেব পূজার সম্পূর্ণ বিধিবিধান এবং মন্ত্রোচ্চারণের সঠিক পদ্ধতি জানুন এই বিস্তারিত গাইডে।</p>
+          <a href="#" class="blog-read">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,#FFE4B5,#FFA500);">
+          💍
+          <span class="blog-date">05 May 2025</span>
+        </div>
+        <div class="blog-content">
+          <h4>বিয়ের পূজার সম্পূর্ণ গাইড</h4>
+          <p>বিবাহ অনুষ্ঠানে কোন কোন পূজা করতে হয় এবং সেগুলির সঠিক নিয়মকানুন সম্পর্কে বিস্তারিত আলোচনা।</p>
+          <a href="#" class="blog-read">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,#FFD700,#FF4500);">
+          🔱
+          <span class="blog-date">01 May 2025</span>
+        </div>
+        <div class="blog-content">
+          <h4>লক্ষ্মী পূজার ফুল ও নিয়ম</h4>
+          <p>লক্ষ্মী পূজায় কোন ফুল ব্যবহার করতে হয় এবং পূজার সম্পূর্ণ বিধিবিধান সম্পর্কে জানুন।</p>
+          <a href="#" class="blog-read">Read More →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== APP SECTION ===== -->
+<section class="section app-section">
+  <div class="container">
+    <div class="app-grid">
+      <div class="app-content">
+        <h2>Book on the go!<br/>Download PujaParban App</h2>
+        <p>Get the app for a better experience and easy booking. Available on both Android and iOS.</p>
+        <div class="store-btns">
+          <a href="#" class="store-btn" onclick="alert('App coming soon on Play Store!')">
+            <span class="store-icon">▶</span>
+            <div>
+              <small>GET IT ON</small>
+              <strong>Google Play</strong>
+            </div>
+          </a>
+          <a href="#" class="store-btn" onclick="alert('App coming soon on App Store!')">
+            <span class="store-icon">🍎</span>
+            <div>
+              <small>Download on the</small>
+              <strong>App Store</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="app-phones">
+        <div class="phone-mockup">📱</div>
+        <div class="phone-mockup">📲</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="contact">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a class="nav-brand" href="index.html">
+            <img src="assets/logo.jpeg" alt="Puja Parban" class="nav-logo nav-logo-footer" />
+          </a>
+          <p>আপনার পুজো, আমাদের দায়িত্ব।<br/>Trusted priest booking platform for all religious ceremonies.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" title="Facebook">f</a>
+            <a href="#" class="social-btn" title="Instagram">ig</a>
+            <a href="#" class="social-btn" title="YouTube">yt</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#priests">Priests</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-item">📞 +91 9876543210</div>
+          <div class="footer-contact-item">✉️ support@pujaparban.com</div>
+          <div class="footer-contact-item">📍 Kolkata, West Bengal</div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Newsletter</h5>
+          <p style="font-size:.82rem;opacity:.6;margin-bottom:8px;">Subscribe to get updates</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Enter your email" />
+            <button onclick="alert('Subscribed! Thank you.')">Subscribe</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      © 2025 PujaParban. All Rights Reserved. |
+      <a href="admin/index.html" style="opacity:.4;margin-left:8px;font-size:.75rem;">Admin</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+
+  // Testimonial slider
+  let currentSlide = 0;
+  const totalSlides = 3;
+
+  function goToSlide(n) {
+    document.getElementById('slide-' + currentSlide).style.display = 'none';
+    document.querySelectorAll('.slider-dot')[currentSlide].classList.remove('active');
+    currentSlide = n;
+    document.getElementById('slide-' + currentSlide).style.display = 'flex';
+    document.querySelectorAll('.slider-dot')[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % totalSlides);
+  }
+
+  // Auto-rotate testimonials
+  setInterval(nextSlide, 5000);
+
+  // Smooth active nav link on scroll
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+
+</body>
+</html>

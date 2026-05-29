@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — PujaParban</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+<div class="admin-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img src="../assets/logo.jpeg" alt="Puja Parban" class="sidebar-logo-img" />
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Main</div>
+      <a href="index.html" class="sidebar-link active">
+        <span class="icon">📊</span> Dashboard
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Manage</div>
+      <a href="priests.html" class="sidebar-link">
+        <span class="icon">🧘</span> Priests
+        <span class="sidebar-badge">24</span>
+      </a>
+      <a href="bookings.html" class="sidebar-link">
+        <span class="icon">📅</span> Bookings
+        <span class="sidebar-badge">8</span>
+      </a>
+      <a href="services.html" class="sidebar-link">
+        <span class="icon">🪔</span> Services
+      </a>
+      <a href="blog.html" class="sidebar-link">
+        <span class="icon">📝</span> Blog
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">System</div>
+      <a href="#" class="sidebar-link" onclick="alert('Users management coming soon')">
+        <span class="icon">👥</span> Users
+      </a>
+      <a href="#" class="sidebar-link" onclick="alert('Reviews management coming soon')">
+        <span class="icon">⭐</span> Reviews
+      </a>
+      <a href="#" class="sidebar-link" onclick="alert('Settings coming soon')">
+        <span class="icon">⚙️</span> Settings
+      </a>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user-avatar">A</div>
+      <div>
+        <div class="sidebar-user-name">Admin User</div>
+        <div class="sidebar-user-role">Super Admin</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="admin-main">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <h2>Dashboard</h2>
+        <p>Welcome back, Admin! Here's what's happening today.</p>
+      </div>
+      <div class="topbar-right">
+        <a href="../index.html" class="back-link">← View Site</a>
+        <button class="topbar-btn" title="Notifications" onclick="alert('3 new notifications')">🔔</button>
+        <div class="topbar-profile">
+          <div class="sidebar-user-avatar" style="width:32px;height:32px;font-size:.8rem;">A</div>
+          Admin
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+      <!-- STATS -->
+      <div class="stats-grid">
+        <div class="stat-card stat-purple">
+          <div>
+            <div class="stat-value">1,284</div>
+            <div class="stat-label">Total Bookings</div>
+            <div class="stat-change up">↑ 12% this month</div>
+          </div>
+          <div class="stat-icon">📅</div>
+        </div>
+        <div class="stat-card stat-gold">
+          <div>
+            <div class="stat-value">₹2.4L</div>
+            <div class="stat-label">Total Revenue</div>
+            <div class="stat-change up">↑ 18% this month</div>
+          </div>
+          <div class="stat-icon">💰</div>
+        </div>
+        <div class="stat-card stat-green">
+          <div>
+            <div class="stat-value">24</div>
+            <div class="stat-label">Active Priests</div>
+            <div class="stat-change up">↑ 2 new this month</div>
+          </div>
+          <div class="stat-icon">🧘</div>
+        </div>
+        <div class="stat-card stat-blue">
+          <div>
+            <div class="stat-value">4.8</div>
+            <div class="stat-label">Avg. Rating</div>
+            <div class="stat-change up">↑ 0.2 this month</div>
+          </div>
+          <div class="stat-icon">⭐</div>
+        </div>
+      </div>
+
+      <!-- BOOKING CHART + QUICK ACTIONS -->
+      <div class="two-col" style="margin-bottom:16px;">
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Bookings This Week</span>
+            <span class="badge badge-purple">Last 7 days</span>
+          </div>
+          <div class="chart-bar-group">
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-value">12</div>
+              <div class="chart-bar" style="height:60%"></div>
+              <div class="chart-bar-label">Mon</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-value">18</div>
+              <div class="chart-bar" style="height:90%"></div>
+              <div class="chart-bar-label">Tue</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-value">9</div>
+              <div class="chart-bar" style="height:45%"></div>
+              <div class="chart-bar-label">Wed</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-value">22</div>
+              <div class="chart-bar" style="height:100%; background:var(--purple);"></div>
+              <div class="chart-bar-label">Thu</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-value">16</div>
+              <div class="chart-bar" style="height:72%"></div>
+              <div class="chart-bar-label">Fri</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-value">20</div>
+              <div class="chart-bar" style="height:88%; background:var(--gold-light);"></div>
+              <div class="chart-bar-label">Sat</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-value">14</div>
+              <div class="chart-bar" style="height:65%"></div>
+              <div class="chart-bar-label">Sun</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Quick Actions</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="priests.html" class="btn btn-primary" style="justify-content:center;">➕ Add New Priest</a>
+            <a href="bookings.html" class="btn btn-outline" style="justify-content:center;">📅 View Pending Bookings</a>
+            <a href="services.html" class="btn btn-outline" style="justify-content:center;">🪔 Manage Services</a>
+            <a href="blog.html" class="btn btn-gold" style="justify-content:center;">📝 Write Blog Post</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECENT BOOKINGS + TOP PRIESTS -->
+      <div class="two-col">
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Recent Bookings</span>
+            <a href="bookings.html" style="color:var(--purple);font-size:.82rem;font-weight:600;">View All →</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Service</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="avatar-cell">
+                      <div class="table-avatar">S</div>
+                      <div>
+                        <div class="cell-name">Soumen Das</div>
+                        <div class="cell-sub">Kolkata</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Griha Pravesh</td>
+                  <td>29 May</td>
+                  <td><span class="badge badge-success">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="avatar-cell">
+                      <div class="table-avatar">P</div>
+                      <div>
+                        <div class="cell-name">Priya Sharma</div>
+                        <div class="cell-sub">Howrah</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Durga Puja</td>
+                  <td>30 May</td>
+                  <td><span class="badge badge-warning">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="avatar-cell">
+                      <div class="table-avatar">R</div>
+                      <div>
+                        <div class="cell-name">Rahul Banerjee</div>
+                        <div class="cell-sub">Durgapur</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Namkaran</td>
+                  <td>31 May</td>
+                  <td><span class="badge badge-info">Assigned</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="avatar-cell">
+                      <div class="table-avatar">M</div>
+                      <div>
+                        <div class="cell-name">Meena Roy</div>
+                        <div class="cell-sub">Kolkata</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Laxmi Puja</td>
+                  <td>01 Jun</td>
+                  <td><span class="badge badge-warning">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="avatar-cell">
+                      <div class="table-avatar">A</div>
+                      <div>
+                        <div class="cell-name">Arnab Ghosh</div>
+                        <div class="cell-sub">Siliguri</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Marriage Puja</td>
+                  <td>02 Jun</td>
+                  <td><span class="badge badge-success">Confirmed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Top Priests</span>
+            <a href="priests.html" style="color:var(--purple);font-size:.82rem;font-weight:600;">View All →</a>
+          </div>
+          <ul class="quick-list">
+            <li>
+              <div class="avatar-cell">
+                <div class="table-avatar">A</div>
+                <div>
+                  <div class="cell-name">Pandit Arindam Chakraborty</div>
+                  <div class="rating">⭐ 4.9 · 48 bookings</div>
+                </div>
+              </div>
+              <span class="badge badge-success">Active</span>
+            </li>
+            <li>
+              <div class="avatar-cell">
+                <div class="table-avatar">S</div>
+                <div>
+                  <div class="cell-name">Pandit Subhankar Bhattacharya</div>
+                  <div class="rating">⭐ 4.8 · 42 bookings</div>
+                </div>
+              </div>
+              <span class="badge badge-success">Active</span>
+            </li>
+            <li>
+              <div class="avatar-cell">
+                <div class="table-avatar">D</div>
+                <div>
+                  <div class="cell-name">Pandit Debabrata Mishra</div>
+                  <div class="rating">⭐ 4.8 · 38 bookings</div>
+                </div>
+              </div>
+              <span class="badge badge-success">Active</span>
+            </li>
+            <li>
+              <div class="avatar-cell">
+                <div class="table-avatar">T</div>
+                <div>
+                  <div class="cell-name">Pandit Tapan Shastri</div>
+                  <div class="rating">⭐ 4.7 · 31 bookings</div>
+                </div>
+              </div>
+              <span class="badge badge-warning">Busy</span>
+            </li>
+            <li>
+              <div class="avatar-cell">
+                <div class="table-avatar">S</div>
+                <div>
+                  <div class="cell-name">Pandit Somnath Acharjee</div>
+                  <div class="rating">⭐ 4.5 · 26 bookings</div>
+                </div>
+              </div>
+              <span class="badge badge-success">Active</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- SERVICE BREAKDOWN -->
+      <div class="card" style="margin-top:16px;">
+        <div class="card-header">
+          <span class="card-title">Service Popularity</span>
+          <span class="badge badge-purple">This month</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:5px;">
+              <span>Griha Pravesh</span><span style="font-weight:700;">38%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:38%;background:var(--purple);"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:5px;">
+              <span>Durga Puja</span><span style="font-weight:700;">22%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:22%;background:var(--gold);"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:5px;">
+              <span>Marriage Puja</span><span style="font-weight:700;">18%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:18%;background:#22c55e;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:5px;">
+              <span>Laxmi Puja</span><span style="font-weight:700;">12%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:12%;background:#3b82f6;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:5px;">
+              <span>Others</span><span style="font-weight:700;">10%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:10%;background:var(--text-muted);"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<!-- Mobile sidebar toggle -->
+<button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">☰</button>
+
+<script>
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
