@@ -19,16 +19,15 @@
       <ul class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About Us</a></li>
+        <li><a href="#priests">Our Priests</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#priests">Priests</a></li>
         <li><a href="#blog">Blog</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
 
       <div class="nav-actions">
         <button class="btn-login" onclick="alert('Login coming soon!')">Login</button>
-        <button class="btn-book" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">📅 Book Now</button>
+        <button class="btn-book" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -42,13 +41,12 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="#home" onclick="closeMobileMenu()">Home</a>
   <a href="#about" onclick="closeMobileMenu()">About Us</a>
+  <a href="#priests" onclick="closeMobileMenu()">Our Priests</a>
   <a href="#services" onclick="closeMobileMenu()">Services</a>
-  <a href="#priests" onclick="closeMobileMenu()">Priests</a>
   <a href="#blog" onclick="closeMobileMenu()">Blog</a>
-  <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
   <button class="btn btn-outline" onclick="alert('Login coming soon!'); closeMobileMenu()">Login</button>
-  <button class="btn btn-primary" onclick="closeMobileMenu()">📅 Book Now</button>
+  <button class="btn btn-primary" onclick="closeMobileMenu()">Book Now</button>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -58,10 +56,10 @@
       <!-- Left -->
       <div>
         <p class="hero-label">আপনার পুজোর জন্য</p>
-        <h1 class="hero-title">সঠিক পুরোহিত<br/>এখন এক ক্লিকে</h1>
+        <h1 class="hero-title">সঠিক পুরোহিত<br/><span>এখন এক ক্লিকে</span></h1>
         <p class="hero-subtitle">
           ঘরে বসেই বুক করুন অভিজ্ঞ ও ভেরিফাইড পুরোহিত।<br/>
-          সহজ, দ্রুত এবং নির্ভরযোগ্য পরিষেবা।
+          সহজ, দ্রুত এবং নির্ভরযোগ্য পরিষেবা — পশ্চিমবঙ্গ জুড়ে।
         </p>
         <div class="hero-trust">
           <div class="hero-trust-item"><span class="icon">✅</span> Verified Priests</div>
@@ -69,10 +67,27 @@
           <div class="hero-trust-item"><span class="icon">🔒</span> Secure Payment</div>
         </div>
         <div class="hero-actions">
-          <button class="btn btn-primary" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">📅 Book a Priest Now</button>
-          <button class="btn btn-outline" onclick="alert('Connecting you to our team…')">📞 Call Consultation</button>
+          <button class="btn btn-primary" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book a Priest Now</button>
+          <button class="btn btn-outline-white" onclick="alert('Connecting you to our team…')">📞 Call Consultation</button>
         </div>
-        <p style="margin-top:10px;font-size:.78rem;color:var(--text-muted);">₹20 / minute consultation</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">500+</span>
+            <span class="hero-stat-label">Verified Priests</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">10K+</span>
+            <span class="hero-stat-label">Families Served</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">50+</span>
+            <span class="hero-stat-label">Puja Types</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">4.9★</span>
+            <span class="hero-stat-label">Average Rating</span>
+          </div>
+        </div>
       </div>
 
       <!-- Right — Booking Card -->
@@ -95,7 +110,7 @@
         </div>
         <div class="form-group">
           <label>📅 Select Date</label>
-          <input type="date" value="2025-05-18" />
+          <input type="date" value="2026-06-28" />
         </div>
         <div class="form-group">
           <label>⏰ Select Time</label>
@@ -117,7 +132,7 @@
             <option>Siliguri, West Bengal</option>
           </select>
         </div>
-        <button class="btn btn-primary btn-find" onclick="alert('Finding best priests for you…')">Find Priest</button>
+        <button class="btn-find" onclick="alert('Finding best priests for you…')">Find Priest</button>
 
         <div class="booking-social-proof">
           <div class="avatars">
@@ -167,10 +182,13 @@
 </div>
 
 <!-- ===== PRIESTS ===== -->
-<section class="section" id="priests">
+<section class="section section-priests" id="priests">
   <div class="container">
     <div class="priests-header">
-      <h2 class="section-title">Our Verified Priests</h2>
+      <div>
+        <h2 class="section-title">Our Verified Priests</h2>
+        <p class="priests-sub">পুজো পার্বণ দেখে সেরা পুরোহিত বেছে নিন</p>
+      </div>
       <a href="#" class="view-all">View All Priests →</a>
     </div>
 
@@ -183,7 +201,7 @@
           <p class="priest-exp">10+ Years Experience</p>
           <div class="priest-rating">⭐ 4.8</div>
           <p class="priest-price">From ₹800</p>
-          <button class="btn btn-primary" style="width:100%;margin-top:8px;padding:8px;font-size:.82rem;" onclick="alert('Booking Pandit Subhankar…')">Book Now</button>
+          <button class="btn btn-primary" style="width:100%;margin-top:10px;padding:9px;font-size:.82rem;" onclick="alert('Booking Pandit Subhankar…')">Book Now</button>
         </div>
       </div>
 
@@ -194,7 +212,7 @@
           <p class="priest-exp">8+ Years Experience</p>
           <div class="priest-rating">⭐ 4.7</div>
           <p class="priest-price">From ₹700</p>
-          <button class="btn btn-primary" style="width:100%;margin-top:8px;padding:8px;font-size:.82rem;" onclick="alert('Booking Pandit Tapan…')">Book Now</button>
+          <button class="btn btn-primary" style="width:100%;margin-top:10px;padding:9px;font-size:.82rem;" onclick="alert('Booking Pandit Tapan…')">Book Now</button>
         </div>
       </div>
 
@@ -205,7 +223,7 @@
           <p class="priest-exp">12+ Years Experience</p>
           <div class="priest-rating">⭐ 4.9</div>
           <p class="priest-price">From ₹1000</p>
-          <button class="btn btn-primary" style="width:100%;margin-top:8px;padding:8px;font-size:.82rem;" onclick="alert('Booking Pandit Arindam…')">Book Now</button>
+          <button class="btn btn-primary" style="width:100%;margin-top:10px;padding:9px;font-size:.82rem;" onclick="alert('Booking Pandit Arindam…')">Book Now</button>
         </div>
       </div>
 
@@ -216,7 +234,7 @@
           <p class="priest-exp">15+ Years Experience</p>
           <div class="priest-rating">⭐ 4.8</div>
           <p class="priest-price">From ₹1200</p>
-          <button class="btn btn-primary" style="width:100%;margin-top:8px;padding:8px;font-size:.82rem;" onclick="alert('Booking Pandit Debabrata…')">Book Now</button>
+          <button class="btn btn-primary" style="width:100%;margin-top:10px;padding:9px;font-size:.82rem;" onclick="alert('Booking Pandit Debabrata…')">Book Now</button>
         </div>
       </div>
 
@@ -227,7 +245,7 @@
           <p class="priest-exp">7+ Years Experience</p>
           <div class="priest-rating">⭐ 4.5</div>
           <p class="priest-price">From ₹600</p>
-          <button class="btn btn-primary" style="width:100%;margin-top:8px;padding:8px;font-size:.82rem;" onclick="alert('Booking Pandit Somnath…')">Book Now</button>
+          <button class="btn btn-primary" style="width:100%;margin-top:10px;padding:9px;font-size:.82rem;" onclick="alert('Booking Pandit Somnath…')">Book Now</button>
         </div>
       </div>
 
@@ -242,72 +260,142 @@
 <!-- ===== HOW IT WORKS ===== -->
 <section class="section how-it-works" id="how-it-works">
   <div class="container">
-    <h2 class="section-title">How It Works?</h2>
+    <div class="how-it-works-head">
+      <h2 class="section-title">How It Works?</h2>
+      <p class="section-sub">Follow the simple steps below to book the best priest for your puja</p>
+    </div>
     <div class="steps-grid">
       <div class="step">
-        <div class="step-num">📅</div>
+        <div class="step-num">1</div>
         <p class="step-label">Step 1</p>
         <h4>Select Puja &amp; Date</h4>
-        <p>Choose the type of puja and select your date &amp; time</p>
+        <p>Choose the type of puja and select your preferred date &amp; time</p>
       </div>
       <div class="step">
-        <div class="step-num">🧘</div>
+        <div class="step-num">2</div>
         <p class="step-label">Step 2</p>
         <h4>We Assign a Priest</h4>
-        <p>We will assign the best priest for your puja</p>
+        <p>We assign the best verified priest for your puja ceremony</p>
       </div>
       <div class="step">
-        <div class="step-num">📍</div>
+        <div class="step-num">3</div>
         <p class="step-label">Step 3</p>
         <h4>Track Live</h4>
-        <p>Track your priest live and know estimated arrival time</p>
+        <p>Track your priest live and get the estimated arrival time</p>
       </div>
       <div class="step">
-        <div class="step-num">🪔</div>
+        <div class="step-num">4</div>
         <p class="step-label">Step 4</p>
         <h4>Puja At Your Home</h4>
-        <p>Priest reaches your home and performs the puja</p>
+        <p>Priest arrives at your home and performs the puja ceremony</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== SERVICES ===== -->
-<section class="section" id="services">
+<section class="section services-section" id="services">
   <div class="container">
     <h2 class="section-title">Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
+    <p class="section-sub">Explore our wide range of sacred puja and ceremony services</p>
+
+    <!-- 3 Featured Image Cards -->
+    <div class="services-cards-grid">
+
+      <div class="service-img-card">
+        <div class="service-img-placeholder service-placeholder-1">
+          🪔
+        </div>
+        <div class="service-img-overlay">
+          <h3>Durga Puja &amp; Kali Puja</h3>
+          <p>Complete ceremony with all traditional rituals and mantras</p>
+          <button class="btn-sm" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+        </div>
+      </div>
+
+      <div class="service-img-card">
+        <div class="service-img-placeholder service-placeholder-2">
+          💍
+        </div>
+        <div class="service-img-overlay">
+          <h3>Marriage &amp; Griha Pravesh</h3>
+          <p>Auspicious ceremonies conducted with Vedic traditions</p>
+          <button class="btn-sm" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+        </div>
+      </div>
+
+      <div class="service-img-card">
+        <div class="service-img-placeholder service-placeholder-3">
+          🌸
+        </div>
+        <div class="service-img-overlay">
+          <h3>Namkaran &amp; Annaprashan</h3>
+          <p>Blessed naming and rice-feeding ceremonies for your newborn</p>
+          <button class="btn-sm" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Icon Grid -->
+    <p class="services-icons-title">Browse All Services</p>
+    <div class="services-icons-grid">
+      <div class="service-icon-card">
         <span class="service-icon">🏠</span>
         <span>Griha Pravesh</span>
       </div>
-      <div class="service-card">
+      <div class="service-icon-card">
         <span class="service-icon">💍</span>
         <span>Marriage Puja</span>
       </div>
-      <div class="service-card">
+      <div class="service-icon-card">
         <span class="service-icon">👶</span>
         <span>Namkaran</span>
       </div>
-      <div class="service-card">
+      <div class="service-icon-card">
         <span class="service-icon">🍚</span>
         <span>Annaprashan</span>
       </div>
-      <div class="service-card">
+      <div class="service-icon-card">
         <span class="service-icon">🪔</span>
         <span>Durga Puja</span>
       </div>
-      <div class="service-card">
+      <div class="service-icon-card">
         <span class="service-icon">✨</span>
-        <span>Laxmi Puja</span>
+        <span>Lakshmi Puja</span>
       </div>
-      <div class="service-card">
+      <div class="service-icon-card">
         <span class="service-icon">🔱</span>
         <span>Kali Puja</span>
       </div>
-      <div class="service-card" style="background:var(--purple-light);" onclick="alert('Browse all 30+ services…')">
+      <div class="service-icon-card" onclick="alert('Browse all 30+ services…')" style="background:var(--primary-light);">
         <span class="service-icon">➕</span>
         <span>More Services</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIVINE POWER CTA ===== -->
+<section class="divine-cta">
+  <div class="container">
+    <div class="divine-cta-grid">
+      <div>
+        <p class="divine-eyebrow">Spiritual Experience</p>
+        <h2 class="divine-title">Experience the Divine Power of the<br/><span>Hare Krishna Mahamantra</span></h2>
+        <p class="divine-desc">
+          Join thousands of families across West Bengal who have found peace, prosperity and
+          blessings through our carefully curated sacred puja ceremonies. Our experienced priests
+          bring the full sanctity of Vedic tradition right to your doorstep.
+        </p>
+        <div class="divine-actions">
+          <button class="btn btn-primary" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book a Ceremony</button>
+          <button class="btn btn-outline-white" onclick="alert('Learn more about our ceremonies…')">Learn More</button>
+        </div>
+      </div>
+      <div class="divine-cta-image">
+        🕉️
+        <p>Priest / Deity Image Placeholder</p>
       </div>
     </div>
   </div>
@@ -316,7 +404,10 @@
 <!-- ===== TESTIMONIALS ===== -->
 <section class="testimonials">
   <div class="container">
-    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonials-head">
+      <h2 class="section-title">Trusted by Families Across West Bengal</h2>
+      <p class="section-sub">পরিবার — What our customers say about us</p>
+    </div>
     <div class="testimonial-slider" id="testimonialSlider">
 
       <div class="testimonial-card" id="slide-0">
@@ -360,7 +451,7 @@
 
     </div>
 
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;">
+    <div class="slider-controls">
       <div class="slider-dots">
         <div class="slider-dot active" onclick="goToSlide(0)"></div>
         <div class="slider-dot" onclick="goToSlide(1)"></div>
@@ -372,7 +463,7 @@
 </section>
 
 <!-- ===== BLOG ===== -->
-<section class="section" id="blog">
+<section class="section blog-section" id="blog">
   <div class="container">
     <div class="blog-header">
       <h2 class="section-title">Latest from Our Blog</h2>
@@ -383,7 +474,7 @@
       <div class="blog-card">
         <div class="blog-img">
           🪔
-          <span class="blog-date">10 May 2025</span>
+          <span class="blog-date">10 Jun 2026</span>
         </div>
         <div class="blog-content">
           <h4>পুষ্পদেব পূজার নিয়ম</h4>
@@ -393,9 +484,9 @@
       </div>
 
       <div class="blog-card">
-        <div class="blog-img" style="background:linear-gradient(135deg,#FFE4B5,#FFA500);">
+        <div class="blog-img" style="background:linear-gradient(135deg,var(--primary-light),var(--primary));">
           💍
-          <span class="blog-date">05 May 2025</span>
+          <span class="blog-date">02 Jun 2026</span>
         </div>
         <div class="blog-content">
           <h4>বিয়ের পূজার সম্পূর্ণ গাইড</h4>
@@ -405,15 +496,171 @@
       </div>
 
       <div class="blog-card">
-        <div class="blog-img" style="background:linear-gradient(135deg,#FFD700,#FF4500);">
+        <div class="blog-img" style="background:linear-gradient(135deg,#FFF0DC,var(--gold));">
           🔱
-          <span class="blog-date">01 May 2025</span>
+          <span class="blog-date">25 May 2026</span>
         </div>
         <div class="blog-content">
           <h4>লক্ষ্মী পূজার ফুল ও নিয়ম</h4>
           <p>লক্ষ্মী পূজায় কোন ফুল ব্যবহার করতে হয় এবং পূজার সম্পূর্ণ বিধিবিধান সম্পর্কে জানুন।</p>
           <a href="#" class="blog-read">Read More →</a>
         </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="faq-head">
+      <h2 class="section-title">FAQs</h2>
+      <p class="section-sub">Get all your questions answered about our services</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I book a puja online?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Simply select your puja type, preferred date, time, and location on our booking form at the top of the page. Click "Find Priest" to view available verified priests in your area and confirm your booking in minutes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How much does a priest booking cost?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Prices vary depending on the type of puja and duration. Our priests start from as low as ₹600 for simple ceremonies. All pricing is transparent — no hidden charges. You can see the exact price before confirming your booking.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How does cancellation/booking work?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>You can cancel a booking up to 24 hours before the scheduled puja time for a full refund. Cancellations within 24 hours may incur a small fee. To cancel, contact our support team via phone or email.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I schedule a booking in advance?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! You can schedule a puja booking up to 30 days in advance. We recommend booking early for festivals like Durga Puja, Lakshmi Puja, and Diwali as our priests fill up quickly during peak seasons.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Are your services available across all of West Bengal?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We currently serve major cities and districts across West Bengal including Kolkata, Howrah, Durgapur, Asansol, Siliguri, Burdwan, Medinipur, and more. We are expanding to new locations regularly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Why should I always choose PujaParban?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>PujaParban offers verified and experienced priests, transparent pricing, live tracking, and 24/7 customer support. With 10,000+ happy families served and a 4.9-star average rating, we are West Bengal's most trusted priest booking platform.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== UPCOMING FESTIVALS ===== -->
+<section class="section upcoming-section">
+  <div class="container">
+    <h2 class="section-title">Upcoming Festivals</h2>
+    <p class="section-sub">Book a priest in advance for the upcoming festivals and ceremonies</p>
+    <div class="upcoming-grid">
+
+      <div class="upcoming-card">
+        <div class="upcoming-date">
+          <span class="month">JUN</span>
+          <span class="day">27</span>
+        </div>
+        <div class="upcoming-info">
+          <h4>Jagannath Rath Yatra</h4>
+          <p>Book your rath yatra puja now</p>
+        </div>
+        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+      </div>
+
+      <div class="upcoming-card">
+        <div class="upcoming-date">
+          <span class="month">JUL</span>
+          <span class="day">10</span>
+        </div>
+        <div class="upcoming-info">
+          <h4>Guru Purnima</h4>
+          <p>Special puja for Guru Purnima</p>
+        </div>
+        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+      </div>
+
+      <div class="upcoming-card">
+        <div class="upcoming-date">
+          <span class="month">AUG</span>
+          <span class="day">09</span>
+        </div>
+        <div class="upcoming-info">
+          <h4>Raksha Bandhan</h4>
+          <p>Celebrate with sacred rituals</p>
+        </div>
+        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+      </div>
+
+      <div class="upcoming-card">
+        <div class="upcoming-date">
+          <span class="month">AUG</span>
+          <span class="day">16</span>
+        </div>
+        <div class="upcoming-info">
+          <h4>Janmashtami</h4>
+          <p>Krishna Janmashtami puja at home</p>
+        </div>
+        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+      </div>
+
+      <div class="upcoming-card">
+        <div class="upcoming-date">
+          <span class="month">OCT</span>
+          <span class="day">02</span>
+        </div>
+        <div class="upcoming-info">
+          <h4>Durga Puja 2026</h4>
+          <p>Book early — slots fill up fast!</p>
+        </div>
+        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+      </div>
+
+      <div class="upcoming-card">
+        <div class="upcoming-date">
+          <span class="month">OCT</span>
+          <span class="day">20</span>
+        </div>
+        <div class="upcoming-info">
+          <h4>Diwali / Kali Puja</h4>
+          <p>Lakshmi &amp; Kali Puja bookings open</p>
+        </div>
+        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
       </div>
 
     </div>
@@ -462,7 +709,7 @@
           <a class="nav-brand" href="index.html">
             <img src="assets/logo.jpeg" alt="Puja Parban" class="nav-logo nav-logo-footer" />
           </a>
-          <p>আপনার পুজো, আমাদের দায়িত্ব।<br/>Trusted priest booking platform for all religious ceremonies.</p>
+          <p>আপনার পুজো, আমাদের দায়িত্ব।<br/>Trusted priest booking platform for all religious ceremonies across West Bengal.</p>
           <div class="footer-socials">
             <a href="#" class="social-btn" title="Facebook">f</a>
             <a href="#" class="social-btn" title="Instagram">ig</a>
@@ -476,7 +723,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#priests">Priests</a></li>
+            <li><a href="#priests">Our Priests</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -501,7 +748,7 @@
 
         <div class="footer-col">
           <h5>Newsletter</h5>
-          <p style="font-size:.82rem;opacity:.6;margin-bottom:8px;">Subscribe to get updates</p>
+          <p style="font-size:.82rem;opacity:.6;margin-bottom:8px;">Subscribe to get puja updates &amp; offers</p>
           <div class="newsletter-form">
             <input type="email" placeholder="Enter your email" />
             <button onclick="alert('Subscribed! Thank you.')">Subscribe</button>
@@ -513,7 +760,7 @@
   </div>
   <div class="footer-bottom">
     <div class="container">
-      © 2025 PujaParban. All Rights Reserved. |
+      © 2026 PujaParban. All Rights Reserved. |
       <a href="admin/index.html" style="opacity:.4;margin-left:8px;font-size:.75rem;">Admin</a>
     </div>
   </div>
@@ -545,8 +792,26 @@
     goToSlide((currentSlide + 1) % totalSlides);
   }
 
-  // Auto-rotate testimonials
   setInterval(nextSlide, 5000);
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = btn.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-question.open').forEach(q => {
+      q.classList.remove('open');
+      q.parentElement.querySelector('.faq-answer').classList.remove('open');
+    });
+
+    // Open clicked if it was closed
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
 
   // Smooth active nav link on scroll
   const sections = document.querySelectorAll('section[id], div[id]');
