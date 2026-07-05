@@ -65,6 +65,22 @@
   font-display: swap;
 }
 
+/* ===== HEADING FONT — ADOHA ===== */
+@font-face {
+  font-family: 'Adoha';
+  src: url('assets/fonts/Adoha.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1 {
+  font-family: 'Adoha', 'Akhand Bengali', 'Segoe UI', system-ui, sans-serif;
+}
+h3 {
+  font-family: 'Adoha', system-ui, sans-serif;
+}
+
 :root {
   --primary: #E8650A;
   --primary-dark: #C4540A;
@@ -189,6 +205,7 @@ button {
 .btn-primary {
   background: var(--primary);
   color: var(--white);
+  font-family: 'Adoha', sans-serif, system-ui;
 }
 
 .btn-primary:hover {
@@ -211,6 +228,7 @@ button {
   background: transparent;
   color: var(--white);
   border: 2px solid rgba(255, 255, 255, .6);
+  font-family: 'Adoha';
 }
 
 .btn-outline-white:hover {
@@ -331,13 +349,10 @@ button {
   background: var(--primary-dark);
 }
 
-.btn-book-icon {
-  font-size: .95rem;
-  line-height: 1;
-}
-
-.btn .btn-book-icon {
-  font-size: 1rem;
+.btn-icon-svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 /* Hamburger */
@@ -419,7 +434,7 @@ button {
 
 .hero-priest-img {
   position: absolute;
-  right: 330px;
+  right: 260px;
   bottom: -60px;
   height: 500px;
   width: auto;
@@ -438,7 +453,7 @@ button {
 }
 
 .hero-title {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.22;
   color: var(--white);
@@ -511,8 +526,6 @@ button {
   z-index: 3;
 }
 
-.hero-stat {}
-
 .hero-stat-num {
   font-size: 1.6rem;
   font-weight: 800;
@@ -539,7 +552,7 @@ button {
 }
 
 .booking-card h3 {
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--primary);
   text-transform: uppercase;
@@ -552,13 +565,13 @@ button {
   display: block;
   text-align: center;
   font-size: .75rem;
-  font-weight: 700;
-  color: var(--primary);
-  background: var(--primary-light);
-  border-radius: 20px;
+  font-weight: 500;
+  color: var(--primary-light);
+  background: var(--primary);
+  border-radius: 0.25rem;
   padding: 6px 14px;
   margin: 0 auto 20px;
-  width: fit-content;
+  width: auto;
 }
 
 .form-group {
@@ -573,6 +586,12 @@ button {
   font-weight: 600;
   color: var(--text-muted);
   margin-bottom: 6px;
+}
+.form-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--text-muted);
 }
 
 .form-group select,
@@ -603,7 +622,8 @@ button {
   border-radius: 8px;
   background: var(--primary);
   color: var(--white);
-  font-weight: 700;
+  font-weight: 400;
+  font-family: 'Adoha', system-ui, sans-serif;
 }
 
 .btn-find:hover {
@@ -1730,7 +1750,7 @@ button {
   }
 
   .hero-priest-img {
-    right: 280px;
+    right: 220px;
     height: 420px;
   }
 
