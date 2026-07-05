@@ -13,21 +13,21 @@
   <div class="container">
     <nav class="nav">
       <a class="nav-brand" href="index.html">
-        <img src="assets/logo.jpeg" alt="Puja Parban" class="nav-logo" />
+        <img src="assets/logo-header.png" alt="Puja Parban" class="nav-logo" />
       </a>
 
       <ul class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#priests">Our Priests</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#services">Service</a></li>
+        <li><a href="#priests">Priests</a></li>
         <li><a href="#blog">Blog</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
 
       <div class="nav-actions">
         <button class="btn-login" onclick="alert('Login coming soon!')">Login</button>
-        <button class="btn-book" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+        <button class="btn-book" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"><span class="btn-book-icon">↻</span> Book Now</button>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -40,10 +40,10 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#home" onclick="closeMobileMenu()">Home</a>
-  <a href="#about" onclick="closeMobileMenu()">About Us</a>
-  <a href="#priests" onclick="closeMobileMenu()">Our Priests</a>
-  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#services" onclick="closeMobileMenu()">Service</a>
+  <a href="#priests" onclick="closeMobileMenu()">Priests</a>
   <a href="#blog" onclick="closeMobileMenu()">Blog</a>
+  <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
   <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
   <button class="btn btn-outline" onclick="alert('Login coming soon!'); closeMobileMenu()">Login</button>
   <button class="btn btn-primary" onclick="closeMobileMenu()">Book Now</button>
@@ -51,57 +51,44 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
+  <div class="hero-bg"></div>
   <div class="container">
     <div class="hero-grid">
       <!-- Left -->
-      <div>
-        <p class="hero-label">আপনার পুজোর জন্য</p>
-        <h1 class="hero-title">সঠিক পুরোহিত<br/><span>এখন এক ক্লিকে</span></h1>
+      <div class="hero-content">
+        <h1 class="hero-title">আপনার পূজার</h1>
+        <h1 class="hero-title"><span>বিশ্বস্ত পুরোহিত, &nbsp;</span>এখন এক ক্লিকে</h1>
         <p class="hero-subtitle">
-          ঘরে বসেই বুক করুন অভিজ্ঞ ও ভেরিফাইড পুরোহিত।<br/>
-          সহজ, দ্রুত এবং নির্ভরযোগ্য পরিষেবা — পশ্চিমবঙ্গ জুড়ে।
+          বাড়িতে, অফিসে বা বিশেষ অনুষ্ঠানে পূজার জন্য
+          <span class="highlight">অভিজ্ঞ ও যাচাইকৃত পুরোহিত বুক করুন</span> সহজেই।
         </p>
         <div class="hero-trust">
           <div class="hero-trust-item"><span class="icon">✅</span> Verified Priests</div>
-          <div class="hero-trust-item"><span class="icon">⏱️</span> On-time Service</div>
+          <div class="hero-trust-item"><span class="icon">⏱️</span> On-Time Service</div>
           <div class="hero-trust-item"><span class="icon">🔒</span> Secure Payment</div>
         </div>
         <div class="hero-actions">
-          <button class="btn btn-primary" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book a Priest Now</button>
-          <button class="btn btn-outline-white" onclick="alert('Connecting you to our team…')">📞 Call Consultation</button>
+          <button class="btn btn-primary" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"><span class="btn-book-icon">↻</span> Book a Priest Now</button>
+          <button class="btn btn-outline-white" onclick="alert('Connecting you to our team…')">📞 Talk to a Priest</button>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="hero-stat-num">500+</span>
-            <span class="hero-stat-label">Verified Priests</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num">10K+</span>
-            <span class="hero-stat-label">Families Served</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num">50+</span>
-            <span class="hero-stat-label">Puja Types</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num">4.9★</span>
-            <span class="hero-stat-label">Average Rating</span>
-          </div>
-        </div>
+       
       </div>
+
+      <!-- Center — Priest Image -->
+      <img src="assets/purohit_1.png" alt="Verified Priest" class="hero-priest-img" />
 
       <!-- Right — Booking Card -->
       <div class="booking-card" id="booking-form">
-        <h3>Book a Priest</h3>
-        <p>Simple, Fast &amp; Reliable</p>
+        <h3>Book a Priest<br/>for Your Puja Today</h3>
+        <p class="booking-card-badge">Connecting Devotion with Tradition</p>
 
         <div class="form-group">
-          <label>🙏 Select Puja Type</label>
+          <label>⭐ Select Puja Type</label>
           <select>
             <option>Griha Pravesh</option>
             <option>Durga Puja</option>
             <option>Lakshmi Puja</option>
-            <option>Kali Puja</option>
+            <option selected>Kali Puja</option>
             <option>Namkaran</option>
             <option>Annaprashan</option>
             <option>Marriage Puja</option>
@@ -110,10 +97,10 @@
         </div>
         <div class="form-group">
           <label>📅 Select Date</label>
-          <input type="date" value="2026-06-28" />
+          <input type="date" value="2026-06-06" />
         </div>
         <div class="form-group">
-          <label>⏰ Select Time</label>
+          <label>🕐 Select Time</label>
           <select>
             <option>06:00 AM</option>
             <option selected>10:00 AM</option>
@@ -123,8 +110,9 @@
           </select>
         </div>
         <div class="form-group">
-          <label>📍 Your Location</label>
+          <label>📍 Select Location</label>
           <select>
+            <option selected>Barasat, WB</option>
             <option>Kolkata, West Bengal</option>
             <option>Howrah, West Bengal</option>
             <option>Durgapur, West Bengal</option>
@@ -153,28 +141,28 @@
         <div class="trust-icon">✅</div>
         <div>
           <h4>Trusted &amp; Verified</h4>
-          <p>All priests are verified by our team</p>
+          <p>Verified &amp; Experienced Priests</p>
         </div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">📍</div>
         <div>
           <h4>Live Tracking</h4>
-          <p>Track your priest live on map</p>
+          <p>Real-Time Booking Updates</p>
         </div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">💰</div>
         <div>
           <h4>Transparent Pricing</h4>
-          <p>No hidden charges, 100% transparency</p>
+          <p>No Hidden Charges</p>
         </div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">🎧</div>
         <div>
           <h4>24/7 Support</h4>
-          <p>We are always here to help you</p>
+          <p>Support Anytime, Anywhere</p>
         </div>
       </div>
     </div>
@@ -707,7 +695,7 @@
 
         <div class="footer-brand">
           <a class="nav-brand" href="index.html">
-            <img src="assets/logo.jpeg" alt="Puja Parban" class="nav-logo nav-logo-footer" />
+            <img src="assets/logo-header.png" alt="Puja Parban" class="nav-logo nav-logo-footer" />
           </a>
           <p>আপনার পুজো, আমাদের দায়িত্ব।<br/>Trusted priest booking platform for all religious ceremonies across West Bengal.</p>
           <div class="footer-socials">
