@@ -176,75 +176,98 @@
 <!-- ===== PRIESTS ===== -->
 <section class="section section-priests" id="priests">
   <div class="container">
-    <div class="priests-header">
-      <div>
-        <h2 class="section-title">Our Verified Priests</h2>
-        <p class="priests-sub">পুজো পার্বণ দেখে সেরা পুরোহিত বেছে নিন</p>
+    <div class="priests-layout">
+
+      <div class="priests-intro">
+        <h2 class="priests-title">Our<br /><span>Verified Priests</span></h2>
+        <p class="priests-sub-en">Trusted experts for every ritual.</p>
+        <a href="#" class="priests-viewall">View All <span class="chev">›</span></a>
       </div>
-      <a href="#" class="view-all">View All Priests →</a>
-    </div>
 
-    <div class="priests-scroll">
+      <div class="priests-carousel">
+        <button class="priests-nav priests-nav-prev" onclick="scrollPriests(-1)" aria-label="Previous priest">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
 
-      <div class="priest-card">
-        <div class="priest-img">🧘</div>
-        <div class="priest-info">
-          <h4>Pandit Subhankar Bhattacharya</h4>
-          <p class="priest-exp">10+ Years Experience</p>
-          <div class="priest-rating">⭐ 4.8</div>
-          <p class="priest-price">From ₹800</p>
-          <button class="btn btn-primary" style="width:100%;margin-top:10px;padding:9px;font-size:.82rem;" onclick="alert('Booking Pandit Subhankar…')">Book Now</button>
+        <div class="priests-scroll" id="priestsScroll">
+
+          <div class="priest-card">
+            <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Sourav Chattopadhyay" class="priest-photo" /></div>
+            <div class="priest-info">
+              <h4>Pandit Sourav Chattopadhyay</h4>
+              <div class="priest-rating">
+                <span class="stars">★★★★★</span> <span class="rating-num">4.9</span> Rating <span class="rating-count">(203)</span>
+              </div>
+              <p class="priest-exp">15+ Years Experience</p>
+              <p class="priest-speciality"><strong>Speciality:</strong> Laxmi Puja, Griho Probesh</p>
+              <button class="btn-book-puja" onclick="alert('Booking Pandit Sourav…')">Book a Puja</button>
+              <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Sourav…')">Book Consultation</button>
+            </div>
+          </div>
+
+          <div class="priest-card">
+            <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Arun Chattopadhyay" class="priest-photo" /></div>
+            <div class="priest-info">
+              <h4>Pandit Arun Chattopadhyay</h4>
+              <div class="priest-rating">
+                <span class="stars">★★★★</span> <span class="rating-num">4.0</span> Rating <span class="rating-count">(369)</span>
+              </div>
+              <p class="priest-exp">25+ Years Experience</p>
+              <p class="priest-speciality"><strong>Speciality:</strong> Laxmi Puja, Griho Probesh</p>
+              <button class="btn-book-puja" onclick="alert('Booking Pandit Arun…')">Book a Puja</button>
+              <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Arun…')">Book Consultation</button>
+            </div>
+          </div>
+
+          <div class="priest-card">
+            <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Arindam Chakraborty" class="priest-photo" /></div>
+            <div class="priest-info">
+              <h4>Pandit Arindam Chakraborty</h4>
+              <div class="priest-rating">
+                <span class="stars">★★★★★</span> <span class="rating-num">4.9</span> Rating <span class="rating-count">(281)</span>
+              </div>
+              <p class="priest-exp">12+ Years Experience</p>
+              <p class="priest-speciality"><strong>Speciality:</strong> Durga Puja, Satyanarayan Puja</p>
+              <button class="btn-book-puja" onclick="alert('Booking Pandit Arindam…')">Book a Puja</button>
+              <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Arindam…')">Book Consultation</button>
+            </div>
+          </div>
+
+          <div class="priest-card">
+            <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Debabrata Mishra" class="priest-photo" /></div>
+            <div class="priest-info">
+              <h4>Pandit Debabrata Mishra</h4>
+              <div class="priest-rating">
+                <span class="stars">★★★★★</span> <span class="rating-num">4.8</span> Rating <span class="rating-count">(154)</span>
+              </div>
+              <p class="priest-exp">15+ Years Experience</p>
+              <p class="priest-speciality"><strong>Speciality:</strong> Kali Puja, Marriage Puja</p>
+              <button class="btn-book-puja" onclick="alert('Booking Pandit Debabrata…')">Book a Puja</button>
+              <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Debabrata…')">Book Consultation</button>
+            </div>
+          </div>
+
+          <div class="priest-card">
+            <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Somnath Acharjee" class="priest-photo" /></div>
+            <div class="priest-info">
+              <h4>Pandit Somnath Acharjee</h4>
+              <div class="priest-rating">
+                <span class="stars">★★★★</span> <span class="rating-num">4.5</span> Rating <span class="rating-count">(97)</span>
+              </div>
+              <p class="priest-exp">7+ Years Experience</p>
+              <p class="priest-speciality"><strong>Speciality:</strong> Namkaran, Annaprashan</p>
+              <button class="btn-book-puja" onclick="alert('Booking Pandit Somnath…')">Book a Puja</button>
+              <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Somnath…')">Book Consultation</button>
+            </div>
+          </div>
+
         </div>
+
+        <button class="priests-nav priests-nav-next" onclick="scrollPriests(1)" aria-label="Next priest">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
       </div>
 
-      <div class="priest-card">
-        <div class="priest-img">🧘</div>
-        <div class="priest-info">
-          <h4>Pandit Tapan Shastri</h4>
-          <p class="priest-exp">8+ Years Experience</p>
-          <div class="priest-rating">⭐ 4.7</div>
-          <p class="priest-price">From ₹700</p>
-          <button class="btn btn-primary" style="width:100%;margin-top:10px;padding:9px;font-size:.82rem;" onclick="alert('Booking Pandit Tapan…')">Book Now</button>
-        </div>
-      </div>
-
-      <div class="priest-card">
-        <div class="priest-img">🧘</div>
-        <div class="priest-info">
-          <h4>Pandit Arindam Chakraborty</h4>
-          <p class="priest-exp">12+ Years Experience</p>
-          <div class="priest-rating">⭐ 4.9</div>
-          <p class="priest-price">From ₹1000</p>
-          <button class="btn btn-primary" style="width:100%;margin-top:10px;padding:9px;font-size:.82rem;" onclick="alert('Booking Pandit Arindam…')">Book Now</button>
-        </div>
-      </div>
-
-      <div class="priest-card">
-        <div class="priest-img">🧘</div>
-        <div class="priest-info">
-          <h4>Pandit Debabrata Mishra</h4>
-          <p class="priest-exp">15+ Years Experience</p>
-          <div class="priest-rating">⭐ 4.8</div>
-          <p class="priest-price">From ₹1200</p>
-          <button class="btn btn-primary" style="width:100%;margin-top:10px;padding:9px;font-size:.82rem;" onclick="alert('Booking Pandit Debabrata…')">Book Now</button>
-        </div>
-      </div>
-
-      <div class="priest-card">
-        <div class="priest-img">🧘</div>
-        <div class="priest-info">
-          <h4>Pandit Somnath Acharjee</h4>
-          <p class="priest-exp">7+ Years Experience</p>
-          <div class="priest-rating">⭐ 4.5</div>
-          <p class="priest-price">From ₹600</p>
-          <button class="btn btn-primary" style="width:100%;margin-top:10px;padding:9px;font-size:.82rem;" onclick="alert('Booking Pandit Somnath…')">Book Now</button>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="priests-cta">
-      <button class="btn btn-outline" onclick="alert('Loading all priests…')">View All Priests</button>
     </div>
   </div>
 </section>
@@ -767,6 +790,14 @@
     mobileMenu.classList.toggle('open');
   });
   function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+
+  // Priests carousel
+  function scrollPriests(dir) {
+    const track = document.getElementById('priestsScroll');
+    const card = track.querySelector('.priest-card');
+    const amount = card ? card.getBoundingClientRect().width + 24 : 300;
+    track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+  }
 
   // Testimonial slider
   let currentSlide = 0;

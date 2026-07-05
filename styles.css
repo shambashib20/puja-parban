@@ -726,94 +726,222 @@ button {
 /* ===== PRIESTS ===== */
 .section-priests {
   background: var(--white);
+  overflow: hidden;
 }
 
-
-.priests-header {
-  display: flex;
+.priests-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 4px;
 }
 
-.priests-header .section-title {
-  margin-bottom: 0;
-  font-family: 'Adoha', sans-serif
+.priests-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.priests-sub {
-  font-size: .9rem;
+.priests-title {
+  font-family: 'Adoha', 'Akhand Bengali', system-ui, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.priests-title span {
+  color: var(--primary);
+}
+
+.priests-sub-en {
+  font-size: 1.05rem;
   color: var(--text-muted);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+}
+
+.priests-viewall {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 26px;
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: .95rem;
+  transition: var(--transition);
+}
+
+.priests-viewall:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.priests-viewall .chev {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.priests-carousel {
+  position: relative;
+}
+
+.priests-nav {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+  transition: var(--transition);
+}
+
+.priests-nav:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.priests-nav svg {
+  width: 18px;
+  height: 18px;
+}
+
+.priests-nav-prev {
+  left: -18px;
+}
+
+.priests-nav-next {
+  right: -18px;
 }
 
 .priests-scroll {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 6px 4px 10px;
+  scrollbar-width: none;
+}
+
+.priests-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .priest-card {
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
+  flex: 0 0 calc((100% - 48px) / 3);
+  scroll-snap-align: start;
+  background: linear-gradient(180deg, var(--primary-light) 0%, #fffaf4 65%);
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(232, 101, 10, .1);
   transition: var(--transition);
-  background: var(--white);
 }
 
 .priest-card:hover {
-  border-color: var(--primary);
-  box-shadow: var(--shadow);
+  box-shadow: 0 16px 40px rgba(232, 101, 10, .2);
   transform: translateY(-3px);
 }
 
-.priest-img {
+.priest-img-wrap {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  background: var(--primary-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
+  height: 190px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
 }
 
-.priest-info {
-  padding: 14px;
+.priest-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .priest-info h4 {
-  font-size: .9rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 2px;
-  line-height: 1.3;
-}
-
-.priest-exp {
-  font-size: .78rem;
-  color: var(--text-muted);
   margin-bottom: 6px;
+  line-height: 1.3;
 }
 
 .priest-rating {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   font-size: .8rem;
-  font-weight: 600;
-  color: var(--gold);
+  color: var(--text-muted);
   margin-bottom: 6px;
 }
 
-.priest-price {
+.priest-rating .stars {
+  color: var(--gold);
+  letter-spacing: 1px;
   font-size: .85rem;
+}
+
+.priest-rating .rating-num {
   font-weight: 700;
   color: var(--primary);
 }
 
-.priests-cta {
+.priest-exp {
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.priest-speciality {
+  font-size: .8rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.priest-speciality strong {
+  color: var(--primary);
+}
+
+.btn-book-puja,
+.btn-consult {
+  display: block;
+  width: 100%;
   text-align: center;
-  margin-top: 32px;
+  padding: 11px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: .88rem;
+  transition: var(--transition);
+}
+
+.btn-book-puja {
+  background: var(--primary);
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.btn-book-puja:hover {
+  background: var(--primary-dark);
+}
+
+.btn-consult {
+  background: var(--white);
+  color: var(--primary);
+  border: 1.5px solid var(--border);
+}
+
+.btn-consult:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
 }
 
 /* ===== HOW IT WORKS ===== */
@@ -1770,8 +1898,13 @@ button {
     height: 420px;
   }
 
-  .priests-scroll {
-    grid-template-columns: repeat(3, 1fr);
+  .priests-layout {
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+  }
+
+  .priest-card {
+    flex-basis: calc((100% - 32px) / 3);
   }
 
   .services-icons-grid {
@@ -1857,8 +1990,18 @@ button {
     display: block;
   }
 
-  .priests-scroll {
-    grid-template-columns: repeat(2, 1fr);
+  .priests-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .priests-intro {
+    align-items: center;
+    text-align: center;
+  }
+
+  .priest-card {
+    flex-basis: calc((100% - 24px) / 2);
   }
 
   .steps-grid {
@@ -1962,8 +2105,25 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .priests-scroll {
-    grid-template-columns: 1fr;
+  .priests-title {
+    font-size: 1.9rem;
+  }
+
+  .priest-card {
+    flex-basis: 85%;
+  }
+
+  .priests-nav {
+    width: 32px;
+    height: 32px;
+  }
+
+  .priests-nav-prev {
+    left: -8px;
+  }
+
+  .priests-nav-next {
+    right: -8px;
   }
 
   .hero-actions {
