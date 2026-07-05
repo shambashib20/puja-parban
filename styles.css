@@ -725,8 +725,9 @@ button {
 
 /* ===== PRIESTS ===== */
 .section-priests {
-  background: var(--cream);
+  background: var(--white);
 }
+
 
 .priests-header {
   display: flex;
