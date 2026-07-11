@@ -1112,85 +1112,170 @@ button {
   background: var(--cream-alt);
 }
 
-.services-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 28px;
+.services-head {
+  text-align: center;
+  margin-bottom: 36px;
 }
 
-.service-img-card {
-  border-radius: var(--radius);
-  overflow: hidden;
+.services-head .priests-title {
+  margin-bottom: 0;
+}
+
+.services-carousel {
   position: relative;
-  height: 320px;
-  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.services-nav {
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
   transition: var(--transition);
 }
 
-.service-img-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, .18);
-}
-
-.service-img-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5rem;
-  position: relative;
-}
-
-.service-placeholder-1 {
-  background: linear-gradient(145deg, #FF6B35, #C4540A);
-}
-
-.service-placeholder-2 {
-  background: linear-gradient(145deg, #FFB347, #E8650A);
-}
-
-.service-placeholder-3 {
-  background: linear-gradient(145deg, #FFCB6B, #F5A623);
-}
-
-.service-img-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(0deg, rgba(26, 26, 46, .92) 0%, rgba(26, 26, 46, .5) 55%, transparent 100%);
-  padding: 32px 20px 20px;
-  color: var(--white);
-}
-
-.service-img-overlay h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.service-img-overlay p {
-  font-size: .82rem;
-  opacity: .8;
-  margin-bottom: 14px;
-  line-height: 1.5;
-}
-
-.service-img-overlay .btn-sm {
-  display: inline-flex;
-  align-items: center;
-  padding: 7px 16px;
-  font-size: .8rem;
-  font-weight: 600;
+.services-nav:hover {
   background: var(--primary);
   color: var(--white);
-  border-radius: 6px;
+}
+
+.services-nav svg {
+  width: 18px;
+  height: 18px;
+}
+
+.services-nav-prev {
+  left: -18px;
+}
+
+.services-nav-next {
+  right: -18px;
+}
+
+.services-scroll {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 6px 4px 10px;
+  scrollbar-width: none;
+}
+
+.services-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.service-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  scroll-snap-align: start;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 14px 14px 24px;
+  box-shadow: 0 10px 30px rgba(26, 26, 46, .08);
   transition: var(--transition);
 }
 
-.service-img-overlay .btn-sm:hover {
+.service-card:hover {
+  box-shadow: 0 16px 40px rgba(26, 26, 46, .14);
+  transform: translateY(-3px);
+}
+
+.service-card-img {
+  width: 100%;
+  height: 210px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.service-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-card-body {
+  padding: 0 6px;
+}
+
+.service-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.service-card-meta {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.service-card-meta li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .84rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.service-card-meta strong {
+  font-weight: 700;
+}
+
+.meta-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+  margin-top: 1px;
+}
+
+.meta-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.service-card-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.service-card-desc {
+  font-size: .82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.btn-book-service {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: .95rem;
+  background: var(--primary);
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.btn-book-service:hover {
   background: var(--primary-dark);
 }
 
@@ -1976,6 +2061,10 @@ button {
 
   .priest-card {
     flex-basis: calc((100% - 32px) / 3);
+  }
+
+  .service-card {
+    flex-basis: calc((100% - 24px) / 2);
   }
 
   .services-icons-grid {

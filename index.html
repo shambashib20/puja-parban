@@ -366,45 +366,167 @@
 <!-- ===== SERVICES ===== -->
 <section class="section services-section" id="services">
   <div class="container">
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-sub">Explore our wide range of sacred puja and ceremony services</p>
+    <div class="services-head">
+      <h2 class="priests-title">Our&nbsp;<span>Service</span></h2>
+    </div>
 
-    <!-- 3 Featured Image Cards -->
-    <div class="services-cards-grid">
+    <!-- Service Cards Carousel -->
+    <div class="services-carousel">
+      <button class="services-nav services-nav-prev" onclick="scrollServices(-1)" aria-label="Previous service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
 
-      <div class="service-img-card">
-        <div class="service-img-placeholder service-placeholder-1">
-          🪔
+      <div class="services-scroll" id="servicesScroll">
+
+        <div class="service-card">
+          <div class="service-card-img"><img src="assets/our service.png" alt="Satyanarayan Puja" /></div>
+          <div class="service-card-body">
+            <h3 class="service-card-title">Satyanarayan Puja</h3>
+            <ul class="service-card-meta">
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span><strong>Event:</strong> Purnima, Griha Pravesh, Family Prosperity</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
+                <span><strong>Location:</strong> At Your Home, Anywhere in West Bengal</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                <span>Available for Booking</span>
+              </li>
+            </ul>
+            <hr class="service-card-divider" />
+            <p class="service-card-desc">Invite Goddess Lakshmi into your home and workplace for wealth, prosperity, and success. Conducted by verified priests with complete ritual guidance.</p>
+            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+          </div>
         </div>
-        <div class="service-img-overlay">
-          <h3>Durga Puja &amp; Kali Puja</h3>
-          <p>Complete ceremony with all traditional rituals and mantras</p>
-          <button class="btn-sm" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+
+        <div class="service-card">
+          <div class="service-card-img"><img src="assets/our service.png" alt="Griha Pravesh Puja" /></div>
+          <div class="service-card-body">
+            <h3 class="service-card-title">Griha Pravesh Puja</h3>
+            <ul class="service-card-meta">
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span><strong>Event:</strong> Housewarming, New Beginnings</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
+                <span><strong>Location:</strong> At Your Home, Anywhere in West Bengal</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                <span>Available for Booking</span>
+              </li>
+            </ul>
+            <hr class="service-card-divider" />
+            <p class="service-card-desc">A sacred ceremony to bless your new home with positive energy, peace, and prosperity before you move in.</p>
+            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+          </div>
         </div>
+
+        <div class="service-card">
+          <div class="service-card-img"><img src="assets/our service.png" alt="Durga Puja" /></div>
+          <div class="service-card-body">
+            <h3 class="service-card-title">Durga Puja</h3>
+            <ul class="service-card-meta">
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span><strong>Event:</strong> Navratri, Durga Puja, Community Celebrations</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
+                <span><strong>Location:</strong> At Your Home or Venue, West Bengal</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                <span>Available for Booking</span>
+              </li>
+            </ul>
+            <hr class="service-card-divider" />
+            <p class="service-card-desc">Complete traditional rituals and mantras invoking Maa Durga's blessings for strength, protection, and prosperity.</p>
+            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-img"><img src="assets/our service.png" alt="Marriage Puja" /></div>
+          <div class="service-card-body">
+            <h3 class="service-card-title">Marriage Puja</h3>
+            <ul class="service-card-meta">
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span><strong>Event:</strong> Vivah Sanskar, Engagement, Griha Pravesh</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
+                <span><strong>Location:</strong> At Your Venue, Anywhere in West Bengal</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                <span>Available for Booking</span>
+              </li>
+            </ul>
+            <hr class="service-card-divider" />
+            <p class="service-card-desc">Auspicious wedding ceremonies conducted with authentic Vedic traditions for a blessed married life.</p>
+            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-img"><img src="assets/our service.png" alt="Namkaran Puja" /></div>
+          <div class="service-card-body">
+            <h3 class="service-card-title">Namkaran Puja</h3>
+            <ul class="service-card-meta">
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span><strong>Event:</strong> Naming Ceremony, Annaprashan</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
+                <span><strong>Location:</strong> At Your Home, Anywhere in West Bengal</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                <span>Available for Booking</span>
+              </li>
+            </ul>
+            <hr class="service-card-divider" />
+            <p class="service-card-desc">A blessed naming ceremony to welcome your newborn with divine grace and family traditions.</p>
+            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-img"><img src="assets/our service.png" alt="Kali Puja" /></div>
+          <div class="service-card-body">
+            <h3 class="service-card-title">Kali Puja</h3>
+            <ul class="service-card-meta">
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span><strong>Event:</strong> Kali Puja, Diwali, Protection Rituals</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
+                <span><strong>Location:</strong> At Your Home or Venue, West Bengal</span>
+              </li>
+              <li>
+                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                <span>Available for Booking</span>
+              </li>
+            </ul>
+            <hr class="service-card-divider" />
+            <p class="service-card-desc">Powerful rituals invoking Maa Kali for protection, courage, and removal of obstacles.</p>
+            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+          </div>
+        </div>
+
       </div>
 
-      <div class="service-img-card">
-        <div class="service-img-placeholder service-placeholder-2">
-          💍
-        </div>
-        <div class="service-img-overlay">
-          <h3>Marriage &amp; Griha Pravesh</h3>
-          <p>Auspicious ceremonies conducted with Vedic traditions</p>
-          <button class="btn-sm" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-        </div>
-      </div>
-
-      <div class="service-img-card">
-        <div class="service-img-placeholder service-placeholder-3">
-          🌸
-        </div>
-        <div class="service-img-overlay">
-          <h3>Namkaran &amp; Annaprashan</h3>
-          <p>Blessed naming and rice-feeding ceremonies for your newborn</p>
-          <button class="btn-sm" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-        </div>
-      </div>
-
+      <button class="services-nav services-nav-next" onclick="scrollServices(1)" aria-label="Next service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
     </div>
 
     <!-- Icon Grid -->
@@ -850,6 +972,14 @@
   function scrollPriests(dir) {
     const track = document.getElementById('priestsScroll');
     const card = track.querySelector('.priest-card');
+    const amount = card ? card.getBoundingClientRect().width + 24 : 300;
+    track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+  }
+
+  // Services carousel
+  function scrollServices(dir) {
+    const track = document.getElementById('servicesScroll');
+    const card = track.querySelector('.service-card');
     const amount = card ? card.getBoundingClientRect().width + 24 : 300;
     track.scrollBy({ left: dir * amount, behavior: 'smooth' });
   }
