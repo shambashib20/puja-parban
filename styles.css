@@ -1,4 +1,5 @@
 /* ===== PUJAPARBAN — PRIMARY STYLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&display=swap');
 
 /* ===== BENGALI FONT — AKHAND BENGALI ===== */
 @font-face {
@@ -77,6 +78,7 @@
 h1 {
   font-family: 'Adoha', 'Akhand Bengali', 'Segoe UI', system-ui, sans-serif;
 }
+
 h3 {
   font-family: 'Adoha', system-ui, sans-serif;
 }
@@ -84,6 +86,7 @@ h3 {
 h4 {
   font-family: 'Adoha', system-ui, sans-serif;
 }
+
 h2 {
   font-family: 'Adoha', system-ui, sans-serif;
 }
@@ -148,11 +151,20 @@ button {
 }
 
 /* ===== UTILITY ===== */
-.container {
-  max-width: 1400px;
+.container-big {
+  max-width: 1360px;
   margin: 0 auto;
   padding: 0 24px;
+  width: 100%;
 }
+
+.container {
+  max-width: 1248px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
 
 .section {
   padding: 72px 0;
@@ -261,6 +273,11 @@ button {
   background: var(--white);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 2px 12px rgba(232, 101, 10, .07);
+  min-height: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: s;
 }
 
 .nav {
@@ -276,7 +293,7 @@ button {
 }
 
 .nav-logo {
-  height: 38px;
+  height: 40px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -285,15 +302,17 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 62px;
+  margin-inline: auto;
 }
 
 .nav-links a {
-  font-size: .9rem;
+  font-size: 18px;
   font-weight: 500;
   color: var(--text);
   transition: color var(--transition);
   position: relative;
+  font-family: 'Adoha', system-ui, sans-serif;
 }
 
 .nav-links a.active,
@@ -315,17 +334,20 @@ button {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 35px;
+  margin-left: auto;
+  font-family: 'Adoha', system-ui, sans-serif;
+
 }
 
 .btn-login {
   background: transparent;
   color: var(--primary);
-  border: 2px solid var(--primary);
-  padding: 8px 20px;
+  border: 1px solid var(--primary);
+  padding: 10px 23px;
   border-radius: 8px;
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 20px;
   transition: var(--transition);
 }
 
@@ -340,10 +362,10 @@ button {
   gap: 6px;
   background: var(--primary);
   color: var(--white);
-  padding: 8px 20px;
+  padding: 12px 14px;
   border-radius: 8px;
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 20px;
   transition: var(--transition);
 }
 
@@ -411,37 +433,35 @@ button {
 /* ===== HERO ===== */
 .hero {
   background: var(--dark);
-  padding: 80px 0 60px;
+  /* padding: 80px 0 60px; */
   position: relative;
   overflow: hidden;
+  min-height: 620px;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(15, 15, 30, .90) 0%, rgba(15, 15, 30, .80) 45%, rgba(15, 15, 30, .95) 100%),
-    url('assets/purohit_BG_1.jpg') center 35% / cover no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 45%, rgba(0, 0, 0, 0.95) 100%), url('assets/purohit_BG_1.jpg') center 35% / cover no-repeat;
   z-index: 0;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 360px;
   gap: 48px;
-  align-items: center;
+  margin-top: 100px;
+  align-items: start;
   position: relative;
   z-index: 1;
 }
 
 .hero-priest-img {
   position: absolute;
-  right: 260px;
-  bottom: -60px;
-  height: 500px;
-  width: auto;
+  right: 150px;
   z-index: 2;
   pointer-events: none;
+  top: -40px;
 }
 
 .hero-label {
@@ -455,11 +475,11 @@ button {
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: 50px;
   font-weight: 800;
   line-height: 1.22;
   color: var(--white);
-  margin-bottom: 18px;
+  margin-bottom: 9px;
 }
 
 .hero-title span {
@@ -467,11 +487,13 @@ button {
 }
 
 .hero-subtitle {
-  font-size: 1rem;
+  font-family: "Anek Bangla", sans-serif;
+  font-size: 18px;
   color: var(--white);
   margin-bottom: 28px;
-  line-height: 1.75;
-  max-width: 460px;
+  font-weight: 800;
+  line-height: 1.35;
+  max-width: 500px;
 }
 
 .hero-subtitle .highlight {
@@ -544,7 +566,7 @@ button {
   padding: 28px;
   box-shadow: var(--shadow-dark);
   position: relative;
-  z-index: 1;
+  z-index: 4;
 }
 
 .booking-card h3 {
@@ -583,6 +605,7 @@ button {
   color: var(--text-muted);
   margin-bottom: 6px;
 }
+
 .form-icon {
   width: 14px;
   height: 14px;
@@ -692,7 +715,7 @@ button {
   position: relative;
 }
 
-.trust-item + .trust-item::before {
+.trust-item+.trust-item::before {
   content: '';
   position: absolute;
   left: 0;
@@ -2150,7 +2173,7 @@ button {
   margin: 0;
 }
 
-.footer-bottom p + p {
+.footer-bottom p+p {
   margin-top: 6px;
 }
 
@@ -2282,7 +2305,7 @@ button {
     padding: 0 12px;
   }
 
-  .trust-item + .trust-item::before {
+  .trust-item+.trust-item::before {
     display: none;
   }
 
