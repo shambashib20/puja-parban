@@ -533,6 +533,11 @@ button {
   z-index: 3;
 }
 
+.hero-actions button{
+font-size: 20px;
+padding: 20px ;
+}
+
 .hero-stats {
   display: flex;
   gap: 36px;
@@ -563,44 +568,44 @@ button {
 .booking-card {
   background: var(--white);
   border-radius: var(--radius);
-  padding: 28px;
+  padding: 24px 28px;
   box-shadow: var(--shadow-dark);
   position: relative;
   z-index: 4;
 }
 
 .booking-card h3 {
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: 800;
   color: var(--primary);
   text-transform: uppercase;
   text-align: center;
-  line-height: 1.4;
-  margin-bottom: 14px;
+  line-height: 1;
+  margin-bottom: 8px;
 }
 
 .booking-card-badge {
   display: block;
   text-align: center;
-  font-size: .75rem;
+  font-size: 12px;
   font-weight: 500;
   color: var(--primary-light);
   background: var(--primary);
   border-radius: 0.25rem;
-  padding: 6px 14px;
-  margin: 0 auto 20px;
+  padding: 3px 14px;
+  margin: 0 auto 12px;
   width: auto;
 }
 
 .form-group {
-  margin-bottom: 14px;
+  margin-bottom: 6px;
 }
 
 .form-group label {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: .78rem;
+  font-size: 10px;
   font-weight: 600;
   color: var(--text-muted);
   margin-bottom: 6px;
