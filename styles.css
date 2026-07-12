@@ -75,6 +75,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('assets/fonts/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 h1 {
   font-family: 'Adoha', 'Akhand Bengali', 'Segoe UI', system-ui, sans-serif;
 }
@@ -436,7 +444,7 @@ button {
   /* padding: 80px 0 60px; */
   position: relative;
   overflow: hidden;
-  min-height: 620px;
+  min-height: 630px;
 }
 
 .hero-bg {
@@ -505,18 +513,22 @@ button {
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
+  align-items: center;
   margin-bottom: 32px;
 }
 
 .hero-trust-item {
+  font-family: "HelveticaNeue", 'sans-serif';
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  font-size: .8rem;
+  font-size: 15px;
   font-weight: 600;
   color: rgba(255, 255, 255, .85);
   text-align: center;
+  line-height: 18px;
+  width: 90px;
 }
 
 .trust-icon-svg {
@@ -531,6 +543,7 @@ button {
   flex-wrap: wrap;
   position: relative;
   z-index: 3;
+  margin-top: 60px;
 }
 
 .hero-actions button{
@@ -703,13 +716,14 @@ padding: 20px ;
 .trust-grid {
   position: relative;
   margin: 0 auto;
-  max-width: 1360px;
+  max-width: 1188px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 45%, #d8d8d8 100%);
   border-radius: 14px;
   box-shadow: 0 24px 48px rgba(0, 0, 0, .35), 0 6px 16px rgba(0, 0, 0, .12);
   padding: 26px 10px;
+  min-height: 130px;
 }
 
 .trust-item {
