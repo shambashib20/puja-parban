@@ -1075,7 +1075,7 @@ button {
   background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: 14px;
-  padding: 14px 46px 14px 16px;
+  padding: 20px 200px 14px 14px;
   box-shadow: 0 4px 16px rgba(26, 26, 46, .05);
   transition: var(--transition);
 }
@@ -2231,7 +2231,7 @@ button {
 
 .about-icon {
     flex-shrink: 0;
-    width: 55px; /* Logo ki width adjust kar lena */
+    width: 160px; /* Logo ki width adjust kar lena */
     display: flex;
     align-items: center;
     justify-content: center;
