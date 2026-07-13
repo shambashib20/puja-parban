@@ -545,9 +545,9 @@ button {
   margin-top: 60px;
 }
 
-.hero-actions button{
-font-size: 20px;
-padding: 20px ;
+.hero-actions button {
+  font-size: 20px;
+  padding: 20px;
 }
 
 .hero-stats {
@@ -998,9 +998,9 @@ padding: 20px ;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
   object-position: center;
-  z-index: 0;
+  z-index: 50;
   pointer-events: none;
   user-select: none;
 }
@@ -1029,9 +1029,8 @@ padding: 20px ;
 
 .how-it-works-layout {
   display: grid;
-  grid-template-columns: minmax(0, 460px) 1fr;
+  grid-template-columns:  1fr minmax(0, 460px);
   align-items: center;
-  gap: 56px;
 }
 
 .hiw-visual {
@@ -1132,7 +1131,7 @@ padding: 20px ;
 
 /* ===== SERVICES ===== */
 .services-section {
-  background: var(--cream-alt);
+  background: #ffffff52;
 }
 
 .services-head {
@@ -1199,10 +1198,9 @@ padding: 20px ;
 }
 
 .service-card {
-  flex: 0 0 calc((100% - 48px) / 3);
+  flex: 0 0 calc((100% - 44px) / 3);
   scroll-snap-align: start;
-  background: var(--white);
-  border-radius: 20px;
+  background: #f26e1617;
   padding: 14px 14px 24px;
   /* box-shadow: 0 10px 30px rgba(26, 26, 46, .08); */
   transition: var(--transition);
@@ -1215,7 +1213,7 @@ padding: 20px ;
 
 .service-card-img {
   width: 100%;
-  height: 210px;
+  height: 346px;
   border-radius: 14px;
   overflow: hidden;
   margin-bottom: 16px;
@@ -1283,6 +1281,8 @@ padding: 20px ;
   color: var(--text-muted);
   line-height: 1.55;
   margin-bottom: 18px;
+      min-height: 63px;
+
 }
 
 .btn-book-service {
@@ -1376,7 +1376,7 @@ padding: 20px ;
 
 .divine-cta-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 374px;
   gap: 64px;
   align-items: center;
   position: relative;
@@ -1408,7 +1408,7 @@ padding: 20px ;
   font-weight: 800;
   color: var(--text);
   line-height: 1.22;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .divine-title span {
@@ -1417,8 +1417,9 @@ padding: 20px ;
 
 .divine-desc {
   font-size: .95rem;
-  color: var(--text-muted);
+  color: #454545;
   line-height: 1.8;
+  max-width:533px;
   margin-bottom: 32px;
 }
 
@@ -1713,7 +1714,6 @@ padding: 20px ;
 }
 
 .faq-list {
-  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1727,18 +1727,19 @@ padding: 20px ;
 }
 
 .faq-question {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 22px;
-  background: var(--white);
-  font-size: .95rem;
-  font-weight: 600;
-  color: var(--text);
-  text-align: left;
-  transition: background var(--transition);
-  gap: 16px;
+     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 50px;
+    background: #FEE1CD;
+    box-shadow: 0 3.75px 3.75px  0 rgba(0, 0, 0, .25);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text);
+    text-align: left;
+    transition: background var(--transition);
+    gap: 16px;
 }
 
 .faq-question:hover {
@@ -2212,6 +2213,206 @@ padding: 20px ;
 .footer-credit a:hover {
   color: var(--primary);
 }
+
+
+/* tushar styles */
+
+
+/* ===== NEW: About Section with Divider ===== */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    background: var(--white);
+    padding: 40px 0;
+    flex-wrap: wrap; /* Mobile friendly */
+}
+
+.about-icon {
+    flex-shrink: 0;
+    width: 55px; /* Logo ki width adjust kar lena */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-icon img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-divider {
+    flex-shrink: 0;
+    height: 70px; /* Line ki height */
+    border-left: 2px dashed #4CA9DF; /* Exact blue dotted line */
+}
+
+.about-text {
+    font-family: 'HelveticaNeue', sans-serif;
+    color: var(--text);
+    font-size: 25px;
+    line-height: 1.6;
+    max-width: 1000px;
+}
+
+.about-text .brand-name {
+    color: var(--primary); /* #E8650A */
+    font-weight: 700;
+}
+
+/* Mobile Responsive for this section */
+@media (max-width: 600px) {
+    .about-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .about-divider {
+        height: 40px;
+        border-left: 2px dashed #4CA9DF;
+        margin-left: 26px; /* Align with icon center */
+    }
+}
+
+
+.festival{
+  padding: 80px 0 0 0;
+}
+
+
+.festival-wrapper {
+  max-width: 1242px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-light);
+  border-radius: var(--radius);
+  /* 12px */
+  padding: 56px 66px;
+  gap: 48px;
+  flex-wrap: wrap;
+  /* Mobile responsive */
+}
+
+/* Left Side (Text & Button) */
+.festival-left {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.festival-heading {
+  font-size: 44px;
+  line-height: 1.1;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.festival-heading .highlight {
+  color: var(--primary);
+  /* Exact Orange */
+  font-weight: 700;
+  /* Adoha Bold if available */
+}
+
+.festival-btn {
+  display: inline-block;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  font-family: 'Adoha', sans-serif;
+
+  background: white;
+  /* White inside */
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all var(--transition);
+}
+
+.festival-btn:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Right Side (Cards) */
+.festival-cards {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* Single Card */
+.festival-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  /* 12px */
+    box-shadow: 0 3.72px 3.72px 0 rgba(0, 0,  0, .25);
+  padding: 12px;
+  width: 185px;
+  /* Fixed width as per design */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.festival-card-img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  /* Top rounded, bottom flat */
+  background-color: #ddd;
+  /* Fallback */
+}
+
+.festival-card-title {
+  font-family: 'Akhand Bengali', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--primary);
+  margin-top: 4px;
+}
+
+.festival-card-subtitle {
+  font-family: 'HelveticaNeue', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--primary);
+}
+
+/* Mobile Breakpoint (Tablet & Phone) */
+@media (max-width: 1024px) {
+  .festival-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+  }
+
+  .festival-cards {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .festival-cards {
+    justify-content: center;
+  }
+
+  .festival-heading {
+    font-size: 32px;
+  }
+}
+
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {

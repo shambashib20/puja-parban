@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,532 +8,711 @@
   <link rel="icon" type="image/png" href="assets/icon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="header">
-  <div class="container-big">
-    <nav class="nav">
-      <a class="nav-brand" href="index.html">
-        <img src="assets/logo-header.png" alt="Puja Parban" class="nav-logo" />
-      </a>
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container-big">
+      <nav class="nav">
+        <a class="nav-brand" href="index.html">
+          <img src="assets/logo-header.png" alt="Puja Parban" class="nav-logo" />
+        </a>
 
-      <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#services">Service</a></li>
-        <li><a href="#priests">Priests</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#services">Service</a></li>
+          <li><a href="#priests">Priests</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
 
-      <div class="nav-actions">
-        <button class="btn-login" onclick="alert('Login coming soon!')">Login</button>
-        <button class="btn-book" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"> <img src="./assets/primary-icon.png" alt=""> Book Now</button>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-  </div>
-</header>
-
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#home" onclick="closeMobileMenu()">Home</a>
-  <a href="#services" onclick="closeMobileMenu()">Service</a>
-  <a href="#priests" onclick="closeMobileMenu()">Priests</a>
-  <a href="#blog" onclick="closeMobileMenu()">Blog</a>
-  <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
-  <button class="btn btn-outline" onclick="alert('Login coming soon!'); closeMobileMenu()">Login</button>
-  <button class="btn btn-primary" onclick="closeMobileMenu()">Book Now</button>
-</div>
-
-<!-- ===== HERO ===== -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="container">
-    <div class="hero-grid">
-      <!-- Left -->
-      <div class="hero-content">
-        <h1 class="hero-title">আপনার পূজার</h1>
-        <h1 class="hero-title"><span>বিশ্বস্ত পুরোহিত,</span>এখন এক ক্লিকে</h1>
-        <p class="hero-subtitle">
-          বাড়িতে, অফিসে বা বিশেষ অনুষ্ঠানে পূজার জন্য
-          <span class="highlight">অভিজ্ঞ ও যাচাইকৃত পুরোহিত বুক করুন</span> সহজেই।
-        </p>
-        <div class="hero-trust">
-          <div class="hero-trust-item">
-            <img src="./assets/verified.svg" alt="">
-            <span>Verified Priests</span>
-          </div>
-          <div class="hero-trust-item">
-            <img src="./assets/ontime.svg" alt="">
-            <span>On-Time Service</span>
-          </div>
-          <div class="hero-trust-item">
-            <img src="./assets/secure.svg" alt="">
-            <span>Secure Payment</span>
-          </div>
+        <div class="nav-actions">
+          <button class="btn-login" onclick="alert('Login coming soon!')">Login</button>
+          <button class="btn-book"
+            onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"> <img
+              src="./assets/primary-icon.png" alt=""> Book Now</button>
         </div>
-        <div class="hero-actions">
-          <button class="btn btn-primary" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">  <img src="./assets/primary-icon.png" alt=""> Book a Priest Now</button>
-          <button class="btn btn-outline-white" onclick="alert('Connecting you to our team…')"><svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Talk to a Priest</button>
-        </div>
-       
-      </div>
 
-      <!-- Center — Priest Image -->
-      <img src="assets/purohit_1.png" alt="Verified Priest" class="hero-priest-img" />
-
-      <!-- Right — Booking Card -->
-      <div class="booking-card" id="booking-form">
-        <h3>Book a Priest<br/>for Your Puja Today</h3>
-        <p class="booking-card-badge">Connecting Devotion with Tradition</p>
-
-        <div class="form-group">
-          <label><svg class="form-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Select Puja Type</label>
-          <select>
-            <option>Griha Pravesh</option>
-            <option>Durga Puja</option>
-            <option>Lakshmi Puja</option>
-            <option selected>Kali Puja</option>
-            <option>Namkaran</option>
-            <option>Annaprashan</option>
-            <option>Marriage Puja</option>
-            <option>Satyanarayan Puja</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label><svg class="form-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Select Date</label>
-          <input type="date" value="2026-06-06" />
-        </div>
-        <div class="form-group">
-          <label><svg class="form-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Select Time</label>
-          <select>
-            <option>06:00 AM</option>
-            <option selected>10:00 AM</option>
-            <option>12:00 PM</option>
-            <option>04:00 PM</option>
-            <option>06:00 PM</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label><svg class="form-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Select Location</label>
-          <select>
-            <option selected>Barasat, WB</option>
-            <option>Kolkata, West Bengal</option>
-            <option>Howrah, West Bengal</option>
-            <option>Durgapur, West Bengal</option>
-            <option>Asansol, West Bengal</option>
-            <option>Siliguri, West Bengal</option>
-          </select>
-        </div>
-        <button class="btn-find" onclick="alert('Finding best priests for you…')">Find Priest</button>
-
-       
-      </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ===== TRUST BAR ===== -->
-<div class="trust-bar">
-  <div class="container">
-    <div class="trust-grid">
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1.8"></circle><path d="M12 8v4.5"></path><path d="M7 16c0 2 2.2 3 5 3s5-1 5-3"></path><path d="M9 11.5L6 14M15 11.5l3 2.5"></path></svg>
-        <div>
-          <h4>Trusted &amp; Verified</h4>
-          <p>Verified &amp; Experienced Priests</p>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMobileMenu()">Home</a>
+    <a href="#services" onclick="closeMobileMenu()">Service</a>
+    <a href="#priests" onclick="closeMobileMenu()">Priests</a>
+    <a href="#blog" onclick="closeMobileMenu()">Blog</a>
+    <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
+    <button class="btn btn-outline" onclick="alert('Login coming soon!'); closeMobileMenu()">Login</button>
+    <button class="btn btn-primary" onclick="closeMobileMenu()">Book Now</button>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left -->
+        <div class="hero-content">
+          <h1 class="hero-title">আপনার পূজার</h1>
+          <h1 class="hero-title"><span>বিশ্বস্ত পুরোহিত,</span>এখন এক ক্লিকে</h1>
+          <p class="hero-subtitle">
+            বাড়িতে, অফিসে বা বিশেষ অনুষ্ঠানে পূজার জন্য
+            <span class="highlight">অভিজ্ঞ ও যাচাইকৃত পুরোহিত বুক করুন</span> সহজেই।
+          </p>
+          <div class="hero-trust">
+            <div class="hero-trust-item">
+              <img src="./assets/verified.svg" alt="">
+              <span>Verified Priests</span>
+            </div>
+            <div class="hero-trust-item">
+              <img src="./assets/ontime.svg" alt="">
+              <span>On-Time Service</span>
+            </div>
+            <div class="hero-trust-item">
+              <img src="./assets/secure.svg" alt="">
+              <span>Secure Payment</span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <button class="btn btn-primary"
+              onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})"> <img
+                src="./assets/primary-icon.png" alt=""> Book a Priest Now</button>
+            <button class="btn btn-outline-white" onclick="alert('Connecting you to our team…')"><svg
+                class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg> Talk to a Priest</button>
+          </div>
+
         </div>
-      </div>
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        <div>
-          <h4>Live Tracking</h4>
-          <p>Real-Time Booking Updates</p>
-        </div>
-      </div>
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-        <div>
-          <h4>Transparent Pricing</h4>
-          <p>No Hidden Charges</p>
-        </div>
-      </div>
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-        <div>
-          <h4>24/7 Support</h4>
-          <p>Support Anytime, Anywhere</p>
+
+        <!-- Center — Priest Image -->
+        <img src="assets/purohit_1.png" alt="Verified Priest" class="hero-priest-img" />
+
+        <!-- Right — Booking Card -->
+        <div class="booking-card" id="booking-form">
+          <h3>Book a Priest<br />for Your Puja Today</h3>
+          <p class="booking-card-badge">Connecting Devotion with Tradition</p>
+
+          <div class="form-group">
+            <label><svg class="form-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg> Select Puja Type</label>
+            <select>
+              <option>Griha Pravesh</option>
+              <option>Durga Puja</option>
+              <option>Lakshmi Puja</option>
+              <option selected>Kali Puja</option>
+              <option>Namkaran</option>
+              <option>Annaprashan</option>
+              <option>Marriage Puja</option>
+              <option>Satyanarayan Puja</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><svg class="form-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg> Select Date</label>
+            <input type="date" value="2026-06-06" />
+          </div>
+          <div class="form-group">
+            <label><svg class="form-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg> Select Time</label>
+            <select>
+              <option>06:00 AM</option>
+              <option selected>10:00 AM</option>
+              <option>12:00 PM</option>
+              <option>04:00 PM</option>
+              <option>06:00 PM</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><svg class="form-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg> Select Location</label>
+            <select>
+              <option selected>Barasat, WB</option>
+              <option>Kolkata, West Bengal</option>
+              <option>Howrah, West Bengal</option>
+              <option>Durgapur, West Bengal</option>
+              <option>Asansol, West Bengal</option>
+              <option>Siliguri, West Bengal</option>
+            </select>
+          </div>
+          <button class="btn-find" onclick="alert('Finding best priests for you…')">Find Priest</button>
+
+
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="5" r="1.8"></circle>
+            <path d="M12 8v4.5"></path>
+            <path d="M7 16c0 2 2.2 3 5 3s5-1 5-3"></path>
+            <path d="M9 11.5L6 14M15 11.5l3 2.5"></path>
+          </svg>
+          <div>
+            <h4>Trusted &amp; Verified</h4>
+            <p>Verified &amp; Experienced Priests</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <div>
+            <h4>Live Tracking</h4>
+            <p>Real-Time Booking Updates</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <div>
+            <h4>Transparent Pricing</h4>
+            <p>No Hidden Charges</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          <div>
+            <h4>24/7 Support</h4>
+            <p>Support Anytime, Anywhere</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-<!-- ===== PRIESTS ===== -->
-<section class="section section-priests" id="priests">
-  <div class="container">
-    <div class="priests-layout">
+  <!-- ===== PRIESTS ===== -->
+  <section class="section section-priests" id="priests">
+    <div class="container">
+      <div class="priests-layout">
 
-      <div class="priests-intro">
-        <h2 class="priests-title">Our<br /><span>Verified Priests</span></h2>
-        <p class="priests-sub-en">Trusted experts for every ritual.</p>
-        <a href="#" class="priests-viewall">View All <span class="chev">›</span></a>
+        <div class="priests-intro">
+          <h2 class="priests-title">Our<br /><span>Verified Priests</span></h2>
+          <p class="priests-sub-en">Trusted experts for every ritual.</p>
+          <a href="#" class="priests-viewall">View All <span class="chev">›</span></a>
+        </div>
+
+        <div class="priests-carousel">
+          <button class="priests-nav priests-nav-prev" onclick="scrollPriests(-1)" aria-label="Previous priest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <div class="priests-scroll" id="priestsScroll">
+
+            <div class="priest-card">
+              <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Sourav Chattopadhyay"
+                  class="priest-photo" /></div>
+              <div class="priest-info">
+                <h4>Pandit Sourav Chattopadhyay</h4>
+                <div class="priest-rating">
+                  <span class="stars">★★★★★</span> <span class="rating-num">4.9</span> Rating <span
+                    class="rating-count">(203)</span>
+                </div>
+                <p class="priest-exp">15+ Years Experience</p>
+                <p class="priest-speciality"><strong>Speciality:</strong> Laxmi Puja, Griho Probesh</p>
+                <button class="btn-book-puja" onclick="alert('Booking Pandit Sourav…')">Book a Puja</button>
+                <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Sourav…')">Book
+                  Consultation</button>
+              </div>
+            </div>
+
+            <div class="priest-card">
+              <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Arun Chattopadhyay"
+                  class="priest-photo" /></div>
+              <div class="priest-info">
+                <h4>Pandit Arun Chattopadhyay</h4>
+                <div class="priest-rating">
+                  <span class="stars">★★★★</span> <span class="rating-num">4.0</span> Rating <span
+                    class="rating-count">(369)</span>
+                </div>
+                <p class="priest-exp">25+ Years Experience</p>
+                <p class="priest-speciality"><strong>Speciality:</strong> Laxmi Puja, Griho Probesh</p>
+                <button class="btn-book-puja" onclick="alert('Booking Pandit Arun…')">Book a Puja</button>
+                <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Arun…')">Book
+                  Consultation</button>
+              </div>
+            </div>
+
+            <div class="priest-card">
+              <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Arindam Chakraborty"
+                  class="priest-photo" /></div>
+              <div class="priest-info">
+                <h4>Pandit Arindam Chakraborty</h4>
+                <div class="priest-rating">
+                  <span class="stars">★★★★★</span> <span class="rating-num">4.9</span> Rating <span
+                    class="rating-count">(281)</span>
+                </div>
+                <p class="priest-exp">12+ Years Experience</p>
+                <p class="priest-speciality"><strong>Speciality:</strong> Durga Puja, Satyanarayan Puja</p>
+                <button class="btn-book-puja" onclick="alert('Booking Pandit Arindam…')">Book a Puja</button>
+                <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Arindam…')">Book
+                  Consultation</button>
+              </div>
+            </div>
+
+            <div class="priest-card">
+              <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Debabrata Mishra"
+                  class="priest-photo" /></div>
+              <div class="priest-info">
+                <h4>Pandit Debabrata Mishra</h4>
+                <div class="priest-rating">
+                  <span class="stars">★★★★★</span> <span class="rating-num">4.8</span> Rating <span
+                    class="rating-count">(154)</span>
+                </div>
+                <p class="priest-exp">15+ Years Experience</p>
+                <p class="priest-speciality"><strong>Speciality:</strong> Kali Puja, Marriage Puja</p>
+                <button class="btn-book-puja" onclick="alert('Booking Pandit Debabrata…')">Book a Puja</button>
+                <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Debabrata…')">Book
+                  Consultation</button>
+              </div>
+            </div>
+
+            <div class="priest-card">
+              <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Somnath Acharjee"
+                  class="priest-photo" /></div>
+              <div class="priest-info">
+                <h4>Pandit Somnath Acharjee</h4>
+                <div class="priest-rating">
+                  <span class="stars">★★★★</span> <span class="rating-num">4.5</span> Rating <span
+                    class="rating-count">(97)</span>
+                </div>
+                <p class="priest-exp">7+ Years Experience</p>
+                <p class="priest-speciality"><strong>Speciality:</strong> Namkaran, Annaprashan</p>
+                <button class="btn-book-puja" onclick="alert('Booking Pandit Somnath…')">Book a Puja</button>
+                <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Somnath…')">Book
+                  Consultation</button>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="priests-nav priests-nav-next" onclick="scrollPriests(1)" aria-label="Next priest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section how-it-works" id="how-it-works">
+    <img src="assets/HOW IT WORK 2.svg" alt="" class="how-it-works-bgsvg" aria-hidden="true" />
+    <div class="container">
+      <div class="how-it-works-head">
+        <h2 class="section-title"> </h2>
+        <h2 class="priests-title">How&nbsp;<span>It Work</span></h2>
+        <p class="section-sub">Follow four simple steps to book a trusted priest for your puja.</p>
+      </div>
+      <div class="how-it-works-layout">
+        <div class="hiw-visual">
+          <img src="assets/How_it_work_1.svg" alt="Priests performing a puja ceremony" class="hiw-visual-img" />
+        </div>
+        <div class="hiw-steps">
+          <div class="hiw-step">
+            <div class="hiw-step-card">
+              <div class="hiw-step-icon">
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="6" width="24" height="22" rx="3" fill="var(--primary)" />
+                  <rect x="3" y="6" width="24" height="6.5" rx="3" fill="var(--primary-dark)" />
+                  <rect x="8" y="2" width="3" height="6" rx="1.5" fill="var(--primary-dark)" />
+                  <rect x="20" y="2" width="3" height="6" rx="1.5" fill="var(--primary-dark)" />
+                  <circle cx="26" cy="26" r="9" fill="var(--white)" stroke="var(--primary)" stroke-width="2.2" />
+                  <path d="M26 21v5l3.2 2" stroke="var(--primary)" stroke-width="2.2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="hiw-step-text">
+                <h4>Select Puja, Date &amp; Time</h4>
+                <p>Choose your puja type, preferred date, and time.</p>
+              </div>
+              <span class="hiw-step-num">01</span>
+            </div>
+          </div>
+
+          <div class="hiw-step">
+            <div class="hiw-step-card">
+              <div class="hiw-step-icon">
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="18" cy="8" r="5" fill="var(--primary)" />
+                  <path d="M6 27c0-7 5.4-11 12-11s12 4 12 11" fill="var(--primary)" />
+                  <path d="M2 30c4-3 9-4.6 16-4.6s12 1.6 16 4.6" stroke="var(--primary)" stroke-width="2.4"
+                    stroke-linecap="round" fill="none" />
+                </svg>
+              </div>
+              <div class="hiw-step-text">
+                <h4>Choose Location &amp; Priest</h4>
+                <p>Select your location and preferred verified priest.</p>
+              </div>
+              <span class="hiw-step-num">02</span>
+            </div>
+          </div>
+
+          <div class="hiw-step">
+            <div class="hiw-step-card">
+              <div class="hiw-step-icon">
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13l2-7h22l2 7" stroke="var(--primary)" stroke-width="2.2" stroke-linejoin="round"
+                    fill="none" />
+                  <rect x="6" y="13" width="24" height="15" rx="2" fill="var(--primary)" />
+                  <rect x="14" y="19" width="8" height="9" fill="var(--white)" />
+                  <circle cx="27" cy="27" r="7" fill="var(--white)" stroke="var(--primary)" stroke-width="2.2" />
+                  <path d="M24 27l2 2 4-4.4" stroke="var(--primary)" stroke-width="2.2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="hiw-step-text">
+                <h4>Complete Payment</h4>
+                <p>Pay securely online to confirm your booking.</p>
+              </div>
+              <span class="hiw-step-num">03</span>
+            </div>
+          </div>
+
+          <div class="hiw-step">
+            <div class="hiw-step-card">
+              <div class="hiw-step-icon">
+                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6v10" stroke="var(--primary)" stroke-width="2.2" stroke-linecap="round" />
+                  <path d="M18 14c-3 0-5 2.4-5.6 5.2-.8 3.4-2.8 5.6-5.4 6.8 2.8 1 5.6.8 7.8-.8" stroke="var(--primary)"
+                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                  <path d="M18 14c3 0 5 2.4 5.6 5.2.8 3.4 2.8 5.6 5.4 6.8-2.8 1-5.6.8-7.8-.8" stroke="var(--primary)"
+                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                  <path d="M12 31c1.6-1.4 3.6-2.2 6-2.2s4.4.8 6 2.2" stroke="var(--primary)" stroke-width="2.2"
+                    stroke-linecap="round" fill="none" />
+                </svg>
+              </div>
+              <div class="hiw-step-text">
+                <h4>Puja at Your Home</h4>
+                <p>The priest arrives and performs the puja at your home.</p>
+              </div>
+              <span class="hiw-step-num">04</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="services-head">
+        <h2 class="priests-title">Our&nbsp;<span>Service</span></h2>
       </div>
 
-      <div class="priests-carousel">
-        <button class="priests-nav priests-nav-prev" onclick="scrollPriests(-1)" aria-label="Previous priest">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      <!-- Service Cards Carousel -->
+      <div class="services-carousel">
+        <button class="services-nav services-nav-prev" onclick="scrollServices(-1)" aria-label="Previous service">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
         </button>
 
-        <div class="priests-scroll" id="priestsScroll">
+        <div class="services-scroll" id="servicesScroll">
 
-          <div class="priest-card">
-            <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Sourav Chattopadhyay" class="priest-photo" /></div>
-            <div class="priest-info">
-              <h4>Pandit Sourav Chattopadhyay</h4>
-              <div class="priest-rating">
-                <span class="stars">★★★★★</span> <span class="rating-num">4.9</span> Rating <span class="rating-count">(203)</span>
-              </div>
-              <p class="priest-exp">15+ Years Experience</p>
-              <p class="priest-speciality"><strong>Speciality:</strong> Laxmi Puja, Griho Probesh</p>
-              <button class="btn-book-puja" onclick="alert('Booking Pandit Sourav…')">Book a Puja</button>
-              <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Sourav…')">Book Consultation</button>
+          <div class="service-card">
+            <div class="service-card-img"><img src="assets/our service.png" alt="Satyanarayan Puja" /></div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Satyanarayan Puja</h3>
+              <ul class="service-card-meta">
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                      <path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg></span>
+                  <span><strong>Event:</strong> Purnima, Griha Pravesh, Family Prosperity</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor"
+                        stroke-width="1.8" stroke-linejoin="round" />
+                      <circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8" />
+                    </svg></span>
+                  <span><strong>Location:</strong> At Your Home, Anywhere in West Bengal</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" />
+                    </svg></span>
+                  <span>Available for Booking</span>
+                </li>
+              </ul>
+              <hr class="service-card-divider" />
+              <p class="service-card-desc">Invite Goddess Lakshmi into your home and workplace for wealth, prosperity,
+                and success. Conducted by verified priests with complete ritual guidance.</p>
+              <button class="btn-book-service"
+                onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
             </div>
           </div>
 
-          <div class="priest-card">
-            <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Arun Chattopadhyay" class="priest-photo" /></div>
-            <div class="priest-info">
-              <h4>Pandit Arun Chattopadhyay</h4>
-              <div class="priest-rating">
-                <span class="stars">★★★★</span> <span class="rating-num">4.0</span> Rating <span class="rating-count">(369)</span>
-              </div>
-              <p class="priest-exp">25+ Years Experience</p>
-              <p class="priest-speciality"><strong>Speciality:</strong> Laxmi Puja, Griho Probesh</p>
-              <button class="btn-book-puja" onclick="alert('Booking Pandit Arun…')">Book a Puja</button>
-              <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Arun…')">Book Consultation</button>
+          <div class="service-card">
+            <div class="service-card-img"><img src="assets/our service.png" alt="Griha Pravesh Puja" /></div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Griha Pravesh Puja</h3>
+              <ul class="service-card-meta">
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                      <path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg></span>
+                  <span><strong>Event:</strong> Housewarming, New Beginnings</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor"
+                        stroke-width="1.8" stroke-linejoin="round" />
+                      <circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8" />
+                    </svg></span>
+                  <span><strong>Location:</strong> At Your Home, Anywhere in West Bengal</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" />
+                    </svg></span>
+                  <span>Available for Booking</span>
+                </li>
+              </ul>
+              <hr class="service-card-divider" />
+              <p class="service-card-desc">A sacred ceremony to bless your new home with positive energy, peace, and
+                prosperity before you move in.</p>
+              <button class="btn-book-service"
+                onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
             </div>
           </div>
 
-          <div class="priest-card">
-            <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Arindam Chakraborty" class="priest-photo" /></div>
-            <div class="priest-info">
-              <h4>Pandit Arindam Chakraborty</h4>
-              <div class="priest-rating">
-                <span class="stars">★★★★★</span> <span class="rating-num">4.9</span> Rating <span class="rating-count">(281)</span>
-              </div>
-              <p class="priest-exp">12+ Years Experience</p>
-              <p class="priest-speciality"><strong>Speciality:</strong> Durga Puja, Satyanarayan Puja</p>
-              <button class="btn-book-puja" onclick="alert('Booking Pandit Arindam…')">Book a Puja</button>
-              <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Arindam…')">Book Consultation</button>
+          <div class="service-card">
+            <div class="service-card-img"><img src="assets/our service.png" alt="Durga Puja" /></div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Durga Puja</h3>
+              <ul class="service-card-meta">
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                      <path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg></span>
+                  <span><strong>Event:</strong> Navratri, Durga Puja, Community Celebrations</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor"
+                        stroke-width="1.8" stroke-linejoin="round" />
+                      <circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8" />
+                    </svg></span>
+                  <span><strong>Location:</strong> At Your Home or Venue, West Bengal</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" />
+                    </svg></span>
+                  <span>Available for Booking</span>
+                </li>
+              </ul>
+              <hr class="service-card-divider" />
+              <p class="service-card-desc">Complete traditional rituals and mantras invoking Maa Durga's blessings for
+                strength, protection, and prosperity.</p>
+              <button class="btn-book-service"
+                onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
             </div>
           </div>
 
-          <div class="priest-card">
-            <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Debabrata Mishra" class="priest-photo" /></div>
-            <div class="priest-info">
-              <h4>Pandit Debabrata Mishra</h4>
-              <div class="priest-rating">
-                <span class="stars">★★★★★</span> <span class="rating-num">4.8</span> Rating <span class="rating-count">(154)</span>
-              </div>
-              <p class="priest-exp">15+ Years Experience</p>
-              <p class="priest-speciality"><strong>Speciality:</strong> Kali Puja, Marriage Puja</p>
-              <button class="btn-book-puja" onclick="alert('Booking Pandit Debabrata…')">Book a Puja</button>
-              <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Debabrata…')">Book Consultation</button>
+          <div class="service-card">
+            <div class="service-card-img"><img src="assets/our service.png" alt="Marriage Puja" /></div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Marriage Puja</h3>
+              <ul class="service-card-meta">
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                      <path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg></span>
+                  <span><strong>Event:</strong> Vivah Sanskar, Engagement, Griha Pravesh</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor"
+                        stroke-width="1.8" stroke-linejoin="round" />
+                      <circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8" />
+                    </svg></span>
+                  <span><strong>Location:</strong> At Your Venue, Anywhere in West Bengal</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" />
+                    </svg></span>
+                  <span>Available for Booking</span>
+                </li>
+              </ul>
+              <hr class="service-card-divider" />
+              <p class="service-card-desc">Auspicious wedding ceremonies conducted with authentic Vedic traditions for a
+                blessed married life.</p>
+              <button class="btn-book-service"
+                onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
             </div>
           </div>
 
-          <div class="priest-card">
-            <div class="priest-img-wrap"><img src="assets/purohit_1.png" alt="Pandit Somnath Acharjee" class="priest-photo" /></div>
-            <div class="priest-info">
-              <h4>Pandit Somnath Acharjee</h4>
-              <div class="priest-rating">
-                <span class="stars">★★★★</span> <span class="rating-num">4.5</span> Rating <span class="rating-count">(97)</span>
-              </div>
-              <p class="priest-exp">7+ Years Experience</p>
-              <p class="priest-speciality"><strong>Speciality:</strong> Namkaran, Annaprashan</p>
-              <button class="btn-book-puja" onclick="alert('Booking Pandit Somnath…')">Book a Puja</button>
-              <button class="btn-consult" onclick="alert('Requesting consultation with Pandit Somnath…')">Book Consultation</button>
+          <div class="service-card">
+            <div class="service-card-img"><img src="assets/our service.png" alt="Namkaran Puja" /></div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Namkaran Puja</h3>
+              <ul class="service-card-meta">
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                      <path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg></span>
+                  <span><strong>Event:</strong> Naming Ceremony, Annaprashan</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor"
+                        stroke-width="1.8" stroke-linejoin="round" />
+                      <circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8" />
+                    </svg></span>
+                  <span><strong>Location:</strong> At Your Home, Anywhere in West Bengal</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" />
+                    </svg></span>
+                  <span>Available for Booking</span>
+                </li>
+              </ul>
+              <hr class="service-card-divider" />
+              <p class="service-card-desc">A blessed naming ceremony to welcome your newborn with divine grace and
+                family traditions.</p>
+              <button class="btn-book-service"
+                onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card-img"><img src="assets/our service.png" alt="Kali Puja" /></div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Kali Puja</h3>
+              <ul class="service-card-meta">
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                      <path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg></span>
+                  <span><strong>Event:</strong> Kali Puja, Diwali, Protection Rituals</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor"
+                        stroke-width="1.8" stroke-linejoin="round" />
+                      <circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8" />
+                    </svg></span>
+                  <span><strong>Location:</strong> At Your Home or Venue, West Bengal</span>
+                </li>
+                <li>
+                  <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" />
+                    </svg></span>
+                  <span>Available for Booking</span>
+                </li>
+              </ul>
+              <hr class="service-card-divider" />
+              <p class="service-card-desc">Powerful rituals invoking Maa Kali for protection, courage, and removal of
+                obstacles.</p>
+              <button class="btn-book-service"
+                onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
             </div>
           </div>
 
         </div>
 
-        <button class="priests-nav priests-nav-next" onclick="scrollPriests(1)" aria-label="Next priest">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <button class="services-nav services-nav-next" onclick="scrollServices(1)" aria-label="Next service">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </button>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ===== HOW IT WORKS ===== -->
-<section class="section how-it-works" id="how-it-works">
-  <img src="assets/HOW IT WORK 2.svg" alt="" class="how-it-works-bgsvg" aria-hidden="true" />
-  <div class="container">
-    <div class="how-it-works-head">
-      <h2 class="section-title"> </h2>
-      <h2 class="priests-title">How&nbsp;<span>It Work</span></h2>
-      <p class="section-sub">Follow four simple steps to book a trusted priest for your puja.</p>
-    </div>
-    <div class="how-it-works-layout">
-      <div class="hiw-visual">
-        <img src="assets/How_it_work_1.svg" alt="Priests performing a puja ceremony" class="hiw-visual-img" />
-      </div>
-      <div class="hiw-steps">
-        <div class="hiw-step">
-          <div class="hiw-step-card">
-            <div class="hiw-step-icon">
-              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="6" width="24" height="22" rx="3" fill="var(--primary)"/>
-                <rect x="3" y="6" width="24" height="6.5" rx="3" fill="var(--primary-dark)"/>
-                <rect x="8" y="2" width="3" height="6" rx="1.5" fill="var(--primary-dark)"/>
-                <rect x="20" y="2" width="3" height="6" rx="1.5" fill="var(--primary-dark)"/>
-                <circle cx="26" cy="26" r="9" fill="var(--white)" stroke="var(--primary)" stroke-width="2.2"/>
-                <path d="M26 21v5l3.2 2" stroke="var(--primary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="hiw-step-text">
-              <h4>Select Puja, Date &amp; Time</h4>
-              <p>Choose your puja type, preferred date, and time.</p>
-            </div>
-            <span class="hiw-step-num">01</span>
-          </div>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-step-card">
-            <div class="hiw-step-icon">
-              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="18" cy="8" r="5" fill="var(--primary)"/>
-                <path d="M6 27c0-7 5.4-11 12-11s12 4 12 11" fill="var(--primary)"/>
-                <path d="M2 30c4-3 9-4.6 16-4.6s12 1.6 16 4.6" stroke="var(--primary)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-              </svg>
-            </div>
-            <div class="hiw-step-text">
-              <h4>Choose Location &amp; Priest</h4>
-              <p>Select your location and preferred verified priest.</p>
-            </div>
-            <span class="hiw-step-num">02</span>
-          </div>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-step-card">
-            <div class="hiw-step-icon">
-              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13l2-7h22l2 7" stroke="var(--primary)" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
-                <rect x="6" y="13" width="24" height="15" rx="2" fill="var(--primary)"/>
-                <rect x="14" y="19" width="8" height="9" fill="var(--white)"/>
-                <circle cx="27" cy="27" r="7" fill="var(--white)" stroke="var(--primary)" stroke-width="2.2"/>
-                <path d="M24 27l2 2 4-4.4" stroke="var(--primary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="hiw-step-text">
-              <h4>Complete Payment</h4>
-              <p>Pay securely online to confirm your booking.</p>
-            </div>
-            <span class="hiw-step-num">03</span>
-          </div>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-step-card">
-            <div class="hiw-step-icon">
-              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6v10" stroke="var(--primary)" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M18 14c-3 0-5 2.4-5.6 5.2-.8 3.4-2.8 5.6-5.4 6.8 2.8 1 5.6.8 7.8-.8" stroke="var(--primary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <path d="M18 14c3 0 5 2.4 5.6 5.2.8 3.4 2.8 5.6 5.4 6.8-2.8 1-5.6.8-7.8-.8" stroke="var(--primary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <path d="M12 31c1.6-1.4 3.6-2.2 6-2.2s4.4.8 6 2.2" stroke="var(--primary)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-              </svg>
-            </div>
-            <div class="hiw-step-text">
-              <h4>Puja at Your Home</h4>
-              <p>The priest arrives and performs the puja at your home.</p>
-            </div>
-            <span class="hiw-step-num">04</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SERVICES ===== -->
-<section class="section services-section" id="services">
-  <div class="container">
-    <div class="services-head">
-      <h2 class="priests-title">Our&nbsp;<span>Service</span></h2>
-    </div>
-
-    <!-- Service Cards Carousel -->
-    <div class="services-carousel">
-      <button class="services-nav services-nav-prev" onclick="scrollServices(-1)" aria-label="Previous service">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-
-      <div class="services-scroll" id="servicesScroll">
-
-        <div class="service-card">
-          <div class="service-card-img"><img src="assets/our service.png" alt="Satyanarayan Puja" /></div>
-          <div class="service-card-body">
-            <h3 class="service-card-title">Satyanarayan Puja</h3>
-            <ul class="service-card-meta">
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <span><strong>Event:</strong> Purnima, Griha Pravesh, Family Prosperity</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
-                <span><strong>Location:</strong> At Your Home, Anywhere in West Bengal</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-                <span>Available for Booking</span>
-              </li>
-            </ul>
-            <hr class="service-card-divider" />
-            <p class="service-card-desc">Invite Goddess Lakshmi into your home and workplace for wealth, prosperity, and success. Conducted by verified priests with complete ritual guidance.</p>
-            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-img"><img src="assets/our service.png" alt="Griha Pravesh Puja" /></div>
-          <div class="service-card-body">
-            <h3 class="service-card-title">Griha Pravesh Puja</h3>
-            <ul class="service-card-meta">
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <span><strong>Event:</strong> Housewarming, New Beginnings</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
-                <span><strong>Location:</strong> At Your Home, Anywhere in West Bengal</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-                <span>Available for Booking</span>
-              </li>
-            </ul>
-            <hr class="service-card-divider" />
-            <p class="service-card-desc">A sacred ceremony to bless your new home with positive energy, peace, and prosperity before you move in.</p>
-            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-img"><img src="assets/our service.png" alt="Durga Puja" /></div>
-          <div class="service-card-body">
-            <h3 class="service-card-title">Durga Puja</h3>
-            <ul class="service-card-meta">
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <span><strong>Event:</strong> Navratri, Durga Puja, Community Celebrations</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
-                <span><strong>Location:</strong> At Your Home or Venue, West Bengal</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-                <span>Available for Booking</span>
-              </li>
-            </ul>
-            <hr class="service-card-divider" />
-            <p class="service-card-desc">Complete traditional rituals and mantras invoking Maa Durga's blessings for strength, protection, and prosperity.</p>
-            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-img"><img src="assets/our service.png" alt="Marriage Puja" /></div>
-          <div class="service-card-body">
-            <h3 class="service-card-title">Marriage Puja</h3>
-            <ul class="service-card-meta">
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <span><strong>Event:</strong> Vivah Sanskar, Engagement, Griha Pravesh</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
-                <span><strong>Location:</strong> At Your Venue, Anywhere in West Bengal</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-                <span>Available for Booking</span>
-              </li>
-            </ul>
-            <hr class="service-card-divider" />
-            <p class="service-card-desc">Auspicious wedding ceremonies conducted with authentic Vedic traditions for a blessed married life.</p>
-            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-img"><img src="assets/our service.png" alt="Namkaran Puja" /></div>
-          <div class="service-card-body">
-            <h3 class="service-card-title">Namkaran Puja</h3>
-            <ul class="service-card-meta">
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <span><strong>Event:</strong> Naming Ceremony, Annaprashan</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
-                <span><strong>Location:</strong> At Your Home, Anywhere in West Bengal</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-                <span>Available for Booking</span>
-              </li>
-            </ul>
-            <hr class="service-card-divider" />
-            <p class="service-card-desc">A blessed naming ceremony to welcome your newborn with divine grace and family traditions.</p>
-            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-img"><img src="assets/our service.png" alt="Kali Puja" /></div>
-          <div class="service-card-body">
-            <h3 class="service-card-title">Kali Puja</h3>
-            <ul class="service-card-meta">
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.2l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <span><strong>Event:</strong> Kali Puja, Diwali, Protection Rituals</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.1 7-12a7 7 0 10-14 0c0 4.9 7 12 7 12z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
-                <span><strong>Location:</strong> At Your Home or Venue, West Bengal</span>
-              </li>
-              <li>
-                <span class="meta-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7.5" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-                <span>Available for Booking</span>
-              </li>
-            </ul>
-            <hr class="service-card-divider" />
-            <p class="service-card-desc">Powerful rituals invoking Maa Kali for protection, courage, and removal of obstacles.</p>
-            <button class="btn-book-service" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-          </div>
-        </div>
-
-      </div>
-
-      <button class="services-nav services-nav-next" onclick="scrollServices(1)" aria-label="Next service">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
-    </div>
-
-    <!-- Icon Grid -->
-    <!-- <p class="services-icons-title">Browse All Services</p>
+      <!-- Icon Grid -->
+      <!-- <p class="services-icons-title">Browse All Services</p>
     <div class="services-icons-grid">
       <div class="service-icon-card">
         <span class="service-icon">🏠</span>
@@ -567,511 +747,562 @@
         <span>More Services</span>
       </div>
     </div> -->
-  </div>
-</section>
-
-<!-- ===== DIVINE POWER CTA ===== -->
-<section class="divine-cta">
-  <img src="assets/Mahamantra left.svg" alt="" class="divine-mahamantra divine-mahamantra-left" aria-hidden="true" />
-  <img src="assets/Mahamantra right.svg" alt="" class="divine-mahamantra divine-mahamantra-right" aria-hidden="true" />
-  <div class="container">
-    <div class="divine-cta-grid">
-      <div>
-        <p class="divine-eyebrow">Spiritual Experience</p>
-        <h2 class="divine-title">Experience the Divine Power of the<br/><span>Hare Krishna Mahamantra</span></h2>
-        <p class="divine-desc">
-          Join thousands of families across West Bengal who have found peace, prosperity and
-          blessings through our carefully curated sacred puja ceremonies. Our experienced priests
-          bring the full sanctity of Vedic tradition right to your doorstep.
-        </p>
-        <div class="divine-actions">
-          <button class="btn btn-primary" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Start Chanting Now</button>
-        </div>
-      </div>
-      <div class="divine-cta-image">
-        <img src="assets/Krishna image.svg" alt="Lord Krishna" class="divine-krishna-img" />
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== TESTIMONIALS ===== -->
-<section class="testimonials">
-  <div class="container">
-    <div class="testimonials-head">
-      <h2 class="priests-title">Trusted by Families Across&nbsp;<span>West Bengal</span></h2>
-      <p class="testimonials-sub">Bringing tradition, trust, and convenience together through verified priest booking services.</p>
-      <div class="testimonials-trust">
-        <img src="assets/review member.png" alt="Our verified priests" class="testimonials-trust-avatars" />
-        <p class="testimonials-trust-line1">100+ Verified Priests Across West Bengal</p>
-        <p class="testimonials-trust-line2">50+ Successful Bookings Completed</p>
-      </div>
-    </div>
-
-    <div class="testimonial-slider" id="testimonialSlider">
-
-      <div class="testimonial-card" id="slide-0" style="background-image:url('assets/castomar say background.svg')">
-        <div class="testimonial-photo"><img src="assets/Caustomar Say.png" alt="Arindam Chakraborty" /></div>
-        <div class="testimonial-body">
-          <div class="testimonial-quote-row">
-            <span class="testimonial-quote-mark">
-              <svg viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 36V22.2C0 9.4 7.5 1.1 18.7 0v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H0Z" fill="currentColor"/>
-                <path d="M26.7 36V22.2c0-12.8 7.5-21.1 18.7-22.2v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H26.7Z" fill="currentColor"/>
-              </svg>
-            </span>
-            <h3 class="testimonial-heading">What Our <span>Customers Say</span></h3>
-          </div>
-          <p class="testimonial-text">
-            অনলাইনে পুরোহিত বুক করার অভিজ্ঞতা এত সহজ হবে ভাবিনি। PujaParban-এর মাধ্যমে
-            নির্ভরযোগ্য ও অভিজ্ঞ পুরোহিত পেয়েছি। নির্ধারিত সময়ে উপস্থিত হয়ে অত্যন্ত নিষ্ঠার সঙ্গে
-            পূজা সম্পন্ন করেছেন। সেবার মান এবং পেশাদারিত্বে আমি সম্পূর্ণ সন্তুষ্ট।
-          </p>
-          <p class="testimonial-author">- Arindam Chakraborty, Kolkata</p>
-        </div>
-      </div>
-
-      <div class="testimonial-card" id="slide-1" style="display:none; background-image:url('assets/castomar say background.svg')">
-        <div class="testimonial-photo"><img src="assets/Caustomar Say.png" alt="Priya Sharma" /></div>
-        <div class="testimonial-body">
-          <div class="testimonial-quote-row">
-            <span class="testimonial-quote-mark">
-              <svg viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 36V22.2C0 9.4 7.5 1.1 18.7 0v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H0Z" fill="currentColor"/>
-                <path d="M26.7 36V22.2c0-12.8 7.5-21.1 18.7-22.2v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H26.7Z" fill="currentColor"/>
-              </svg>
-            </span>
-            <h3 class="testimonial-heading">What Our <span>Coustomers Say</span></h3>
-          </div>
-          <p class="testimonial-text">
-            অসাধারণ সার্ভিস! Griha Pravesh এর জন্য বুক করেছিলাম। পুরোহিত এসে খুব সুন্দরভাবে
-            পুজো করলেন। দাম একদম উচিত। আবার বুক করব অবশ্যই।
-          </p>
-          <p class="testimonial-author">- Priya Sharma, Howrah</p>
-        </div>
-      </div>
-
-      <div class="testimonial-card" id="slide-2" style="display:none; background-image:url('assets/castomar say background.svg')">
-        <div class="testimonial-photo"><img src="assets/Caustomar Say.png" alt="Rahul Banerjee" /></div>
-        <div class="testimonial-body">
-          <div class="testimonial-quote-row">
-            <span class="testimonial-quote-mark">
-              <svg viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 36V22.2C0 9.4 7.5 1.1 18.7 0v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H0Z" fill="currentColor"/>
-                <path d="M26.7 36V22.2c0-12.8 7.5-21.1 18.7-22.2v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H26.7Z" fill="currentColor"/>
-              </svg>
-            </span>
-            <h3 class="testimonial-heading">What Our <span>Coustomers Say</span></h3>
-          </div>
-          <p class="testimonial-text">
-            মেয়ের নামকরণের জন্য Pandit Arindam কে বুক করেছিলাম। সময়মতো এসে পুজো সম্পন্ন
-            করলেন। পরিবারের সবাই খুশি। PujaParban কে অনেক ধন্যবাদ।
-          </p>
-          <p class="testimonial-author">- Rahul Banerjee, Durgapur</p>
-        </div>
-      </div>
-
-      <button class="testimonial-nav testimonial-nav-prev" onclick="prevSlide()" aria-label="Previous testimonial">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-      <button class="testimonial-nav testimonial-nav-next" onclick="nextSlide()" aria-label="Next testimonial">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- ===== BLOG ===== -->
-<section class="section blog-section" id="blog">
-  <div class="container">
-    <div class="blog-header">
-      <h2 class="section-title">Latest from Our Blog</h2>
-      <a href="#" class="view-all">View All Blogs →</a>
-    </div>
-    <div class="blog-grid">
-
-      <div class="blog-card">
-        <div class="blog-img">
-          🪔
-          <span class="blog-date">10 Jun 2026</span>
-        </div>
-        <div class="blog-content">
-          <h4>পুষ্পদেব পূজার নিয়ম</h4>
-          <p>পুষ্পদেব পূজার সম্পূর্ণ বিধিবিধান এবং মন্ত্রোচ্চারণের সঠিক পদ্ধতি জানুন এই বিস্তারিত গাইডে।</p>
-          <a href="#" class="blog-read">Read More →</a>
-        </div>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-img" style="background:linear-gradient(135deg,var(--primary-light),var(--primary));">
-          💍
-          <span class="blog-date">02 Jun 2026</span>
-        </div>
-        <div class="blog-content">
-          <h4>বিয়ের পূজার সম্পূর্ণ গাইড</h4>
-          <p>বিবাহ অনুষ্ঠানে কোন কোন পূজা করতে হয় এবং সেগুলির সঠিক নিয়মকানুন সম্পর্কে বিস্তারিত আলোচনা।</p>
-          <a href="#" class="blog-read">Read More →</a>
-        </div>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-img" style="background:linear-gradient(135deg,#FFF0DC,var(--gold));">
-          🔱
-          <span class="blog-date">25 May 2026</span>
-        </div>
-        <div class="blog-content">
-          <h4>লক্ষ্মী পূজার ফুল ও নিয়ম</h4>
-          <p>লক্ষ্মী পূজায় কোন ফুল ব্যবহার করতে হয় এবং পূজার সম্পূর্ণ বিধিবিধান সম্পর্কে জানুন।</p>
-          <a href="#" class="blog-read">Read More →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="section faq-section">
-  <div class="container">
-    <div class="faq-head">
-      <h2 class="section-title">FAQs</h2>
-      <p class="section-sub">Get all your questions answered about our services</p>
-    </div>
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          How do I book a puja online?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Simply select your puja type, preferred date, time, and location on our booking form at the top of the page. Click "Find Priest" to view available verified priests in your area and confirm your booking in minutes.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          How much does a priest booking cost?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Prices vary depending on the type of puja and duration. Our priests start from as low as ₹600 for simple ceremonies. All pricing is transparent — no hidden charges. You can see the exact price before confirming your booking.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          How does cancellation/booking work?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>You can cancel a booking up to 24 hours before the scheduled puja time for a full refund. Cancellations within 24 hours may incur a small fee. To cancel, contact our support team via phone or email.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Can I schedule a booking in advance?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>Yes! You can schedule a puja booking up to 30 days in advance. We recommend booking early for festivals like Durga Puja, Lakshmi Puja, and Diwali as our priests fill up quickly during peak seasons.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Are your services available across all of West Bengal?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>We currently serve major cities and districts across West Bengal including Kolkata, Howrah, Durgapur, Asansol, Siliguri, Burdwan, Medinipur, and more. We are expanding to new locations regularly.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Why should I always choose PujaParban?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>PujaParban offers verified and experienced priests, transparent pricing, live tracking, and 24/7 customer support. With 10,000+ happy families served and a 4.9-star average rating, we are West Bengal's most trusted priest booking platform.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== UPCOMING FESTIVALS ===== -->
-<section class="section upcoming-section">
-  <div class="container">
-    <h2 class="section-title">Upcoming Festivals</h2>
-    <p class="section-sub">Book a priest in advance for the upcoming festivals and ceremonies</p>
-    <div class="upcoming-grid">
-
-      <div class="upcoming-card">
-        <div class="upcoming-date">
-          <span class="month">JUN</span>
-          <span class="day">27</span>
-        </div>
-        <div class="upcoming-info">
-          <h4>Jagannath Rath Yatra</h4>
-          <p>Book your rath yatra puja now</p>
-        </div>
-        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-      </div>
-
-      <div class="upcoming-card">
-        <div class="upcoming-date">
-          <span class="month">JUL</span>
-          <span class="day">10</span>
-        </div>
-        <div class="upcoming-info">
-          <h4>Guru Purnima</h4>
-          <p>Special puja for Guru Purnima</p>
-        </div>
-        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-      </div>
-
-      <div class="upcoming-card">
-        <div class="upcoming-date">
-          <span class="month">AUG</span>
-          <span class="day">09</span>
-        </div>
-        <div class="upcoming-info">
-          <h4>Raksha Bandhan</h4>
-          <p>Celebrate with sacred rituals</p>
-        </div>
-        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-      </div>
-
-      <div class="upcoming-card">
-        <div class="upcoming-date">
-          <span class="month">AUG</span>
-          <span class="day">16</span>
-        </div>
-        <div class="upcoming-info">
-          <h4>Janmashtami</h4>
-          <p>Krishna Janmashtami puja at home</p>
-        </div>
-        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-      </div>
-
-      <div class="upcoming-card">
-        <div class="upcoming-date">
-          <span class="month">OCT</span>
-          <span class="day">02</span>
-        </div>
-        <div class="upcoming-info">
-          <h4>Durga Puja 2026</h4>
-          <p>Book early — slots fill up fast!</p>
-        </div>
-        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-      </div>
-
-      <div class="upcoming-card">
-        <div class="upcoming-date">
-          <span class="month">OCT</span>
-          <span class="day">20</span>
-        </div>
-        <div class="upcoming-info">
-          <h4>Diwali / Kali Puja</h4>
-          <p>Lakshmi &amp; Kali Puja bookings open</p>
-        </div>
-        <button class="btn-xs" onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Book Now</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== APP SECTION ===== -->
-<section class="section app-section">
-  <div class="container">
-    <div class="app-grid">
-      <div class="app-content">
-        <h2>Book on the go!<br/>Download PujaParban App</h2>
-        <p>Get the app for a better experience and easy booking. Available on both Android and iOS.</p>
-        <div class="store-btns">
-          <a href="#" class="store-btn" onclick="alert('App coming soon on Play Store!')">
-            <span class="store-icon">▶</span>
-            <div>
-              <small>GET IT ON</small>
-              <strong>Google Play</strong>
-            </div>
-          </a>
-          <a href="#" class="store-btn" onclick="alert('App coming soon on App Store!')">
-            <span class="store-icon">🍎</span>
-            <div>
-              <small>Download on the</small>
-              <strong>App Store</strong>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="app-phones">
-        <div class="phone-mockup">📱</div>
-        <div class="phone-mockup">📲</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer" id="contact">
-  <div class="footer-main">
+  <!-- ===== DIVINE POWER CTA ===== -->
+  <section class="divine-cta">
+    <img src="assets/Mahamantra left.svg" alt="" class="divine-mahamantra divine-mahamantra-left" aria-hidden="true" />
+    <img src="assets/Mahamantra right.svg" alt="" class="divine-mahamantra divine-mahamantra-right"
+      aria-hidden="true" />
     <div class="container">
-      <div class="footer-grid">
+      <div class="divine-cta-grid">
+        <div>
+          <p class="divine-eyebrow">Spiritual Experience</p>
+          <h2 class="divine-title">Experience the Divine Power of the<br /><span>Hare Krishna Mahamantra</span></h2>
+          <p class="divine-desc">
+            Experience the spiritual power of the Hare Krishna Mahamantra and connect with divine consciousness through
+            sacred chanting. Let every chant fill your heart with peace, devotion, and eternal bliss.
+          </p>
+          <div class="divine-actions">
+            <button class="btn btn-primary"
+              onclick="document.getElementById('booking-form').scrollIntoView({behavior:'smooth'})">Start Chanting
+              Now</button>
+          </div>
+        </div>
+        <div class="divine-cta-image">
+          <img src="assets/Krishna image.svg" alt="Lord Krishna" class="divine-krishna-img" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="footer-brand">
-          <a class="nav-brand" href="index.html">
-        <img src="assets/logo-header.png" alt="Puja Parban" class="nav-logo" />
-      </a>
-          <p class="footer-desc">PujaParban বিশ্বাস, ঐতিহ্য ও প্রযুক্তির এক সেতুবন্ধন। আমাদের লক্ষ্য হলো প্রতিটি ঘর সহজে ও নির্ভরতার সাথে পূজা ও ধর্মীয় সেবা পৌঁছে দেওয়া।</p>
-          <div class="footer-socials">
-            <a href="#" class="social-btn social-fb" title="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.87.24-1.46 1.5-1.46h1.6V4.3c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.42-3.9 4.02v2.24H7.8v3h2.6V21h3.1Z"/></svg>
-            </a>
-            <a href="#" class="social-btn social-ig" title="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
-            </a>
-            <a href="#" class="social-btn social-yt" title="YouTube">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 7.5v9l7.5-4.5L9 7.5Z"/></svg>
-            </a>
-            <a href="#" class="social-btn social-wa" title="WhatsApp">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z"/></svg>
-            </a>
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials-head">
+        <h2 class="priests-title">Trusted by Families Across&nbsp;<span>West Bengal</span></h2>
+        <p class="testimonials-sub">Bringing tradition, trust, and convenience together through verified priest booking
+          services.</p>
+        <div class="testimonials-trust">
+          <img src="assets/review member.png" alt="Our verified priests" class="testimonials-trust-avatars" />
+          <p class="testimonials-trust-line1">100+ Verified Priests Across West Bengal</p>
+          <p class="testimonials-trust-line2">50+ Successful Bookings Completed</p>
+        </div>
+      </div>
+
+      <div class="testimonial-slider" id="testimonialSlider">
+
+        <div class="testimonial-card" id="slide-0" style="background-image:url('assets/castomar say background.svg')">
+          <div class="testimonial-photo"><img src="assets/Caustomar Say.png" alt="Arindam Chakraborty" /></div>
+          <div class="testimonial-body">
+            <div class="testimonial-quote-row">
+              <span class="testimonial-quote-mark">
+                <svg viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 36V22.2C0 9.4 7.5 1.1 18.7 0v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H0Z" fill="currentColor" />
+                  <path d="M26.7 36V22.2c0-12.8 7.5-21.1 18.7-22.2v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H26.7Z"
+                    fill="currentColor" />
+                </svg>
+              </span>
+              <h3 class="testimonial-heading">What Our <span>Customers Say</span></h3>
+            </div>
+            <p class="testimonial-text">
+              অনলাইনে পুরোহিত বুক করার অভিজ্ঞতা এত সহজ হবে ভাবিনি। PujaParban-এর মাধ্যমে
+              নির্ভরযোগ্য ও অভিজ্ঞ পুরোহিত পেয়েছি। নির্ধারিত সময়ে উপস্থিত হয়ে অত্যন্ত নিষ্ঠার সঙ্গে
+              পূজা সম্পন্ন করেছেন। সেবার মান এবং পেশাদারিত্বে আমি সম্পূর্ণ সন্তুষ্ট।
+            </p>
+            <p class="testimonial-author">- Arindam Chakraborty, Kolkata</p>
           </div>
         </div>
 
-        <div class="footer-col">
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#booking-form">Book a Puja</a></li>
-            <li><a href="#priests">Book a Priest</a></li>
-            <li><a href="#priests">Our Priests</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Contact Us</h5>
-          <div class="footer-contact-item">
-            <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span>+91 7047725722</span>
-          </div>
-          <div class="footer-contact-item">
-            <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 6 10 7L22 6"></path></svg>
-            <span>support@pujaparban.com</span>
-          </div>
-          <div class="footer-contact-item">
-            <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Kolkata, West Bengal, India</span>
+        <div class="testimonial-card" id="slide-1"
+          style="display:none; background-image:url('assets/castomar say background.svg')">
+          <div class="testimonial-photo"><img src="assets/Caustomar Say.png" alt="Priya Sharma" /></div>
+          <div class="testimonial-body">
+            <div class="testimonial-quote-row">
+              <span class="testimonial-quote-mark">
+                <svg viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 36V22.2C0 9.4 7.5 1.1 18.7 0v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H0Z" fill="currentColor" />
+                  <path d="M26.7 36V22.2c0-12.8 7.5-21.1 18.7-22.2v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H26.7Z"
+                    fill="currentColor" />
+                </svg>
+              </span>
+              <h3 class="testimonial-heading">What Our <span>Coustomers Say</span></h3>
+            </div>
+            <p class="testimonial-text">
+              অসাধারণ সার্ভিস! Griha Pravesh এর জন্য বুক করেছিলাম। পুরোহিত এসে খুব সুন্দরভাবে
+              পুজো করলেন। দাম একদম উচিত। আবার বুক করব অবশ্যই।
+            </p>
+            <p class="testimonial-author">- Priya Sharma, Howrah</p>
           </div>
         </div>
 
-        <div class="footer-col">
-          <h5>Newsletter</h5>
-          <p class="footer-newsletter-sub">Subscribe to Get Updates</p>
-          <div class="newsletter-form">
-            <input type="email" placeholder="Enter Your Email" />
-            <button onclick="alert('Subscribed! Thank you.')">Subscribe</button>
+        <div class="testimonial-card" id="slide-2"
+          style="display:none; background-image:url('assets/castomar say background.svg')">
+          <div class="testimonial-photo"><img src="assets/Caustomar Say.png" alt="Rahul Banerjee" /></div>
+          <div class="testimonial-body">
+            <div class="testimonial-quote-row">
+              <span class="testimonial-quote-mark">
+                <svg viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 36V22.2C0 9.4 7.5 1.1 18.7 0v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H0Z" fill="currentColor" />
+                  <path d="M26.7 36V22.2c0-12.8 7.5-21.1 18.7-22.2v7.6c-5.6 1.3-8.7 5-8.7 9.9h8.7V36H26.7Z"
+                    fill="currentColor" />
+                </svg>
+              </span>
+              <h3 class="testimonial-heading">What Our <span>Coustomers Say</span></h3>
+            </div>
+            <p class="testimonial-text">
+              মেয়ের নামকরণের জন্য Pandit Arindam কে বুক করেছিলাম। সময়মতো এসে পুজো সম্পন্ন
+              করলেন। পরিবারের সবাই খুশি। PujaParban কে অনেক ধন্যবাদ।
+            </p>
+            <p class="testimonial-author">- Rahul Banerjee, Durgapur</p>
+          </div>
+        </div>
+
+        <button class="testimonial-nav testimonial-nav-prev" onclick="prevSlide()" aria-label="Previous testimonial">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="testimonial-nav testimonial-nav-next" onclick="nextSlide()" aria-label="Next testimonial">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG ===== -->
+  <section class="section blog-section" id="blog">
+    <div class="container">
+      <div class="blog-header">
+        <h2 class="section-title">Latest from Our Blog</h2>
+        <a href="#" class="view-all">View All Blogs →</a>
+      </div>
+      <div class="blog-grid">
+
+        <div class="blog-card">
+          <div class="blog-img">
+            🪔
+            <span class="blog-date">10 Jun 2026</span>
+          </div>
+          <div class="blog-content">
+            <h4>পুষ্পদেব পূজার নিয়ম</h4>
+            <p>পুষ্পদেব পূজার সম্পূর্ণ বিধিবিধান এবং মন্ত্রোচ্চারণের সঠিক পদ্ধতি জানুন এই বিস্তারিত গাইডে।</p>
+            <a href="#" class="blog-read">Read More →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-img" style="background:linear-gradient(135deg,var(--primary-light),var(--primary));">
+            💍
+            <span class="blog-date">02 Jun 2026</span>
+          </div>
+          <div class="blog-content">
+            <h4>বিয়ের পূজার সম্পূর্ণ গাইড</h4>
+            <p>বিবাহ অনুষ্ঠানে কোন কোন পূজা করতে হয় এবং সেগুলির সঠিক নিয়মকানুন সম্পর্কে বিস্তারিত আলোচনা।</p>
+            <a href="#" class="blog-read">Read More →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-img" style="background:linear-gradient(135deg,#FFF0DC,var(--gold));">
+            🔱
+            <span class="blog-date">25 May 2026</span>
+          </div>
+          <div class="blog-content">
+            <h4>লক্ষ্মী পূজার ফুল ও নিয়ম</h4>
+            <p>লক্ষ্মী পূজায় কোন ফুল ব্যবহার করতে হয় এবং পূজার সম্পূর্ণ বিধিবিধান সম্পর্কে জানুন।</p>
+            <a href="#" class="blog-read">Read More →</a>
           </div>
         </div>
 
       </div>
     </div>
-  </div>
-  <div class="footer-bottom">
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section faq-section">
     <div class="container">
-      <!-- <p>© Copyright Puja Parban All Rights Reserved</p> -->
-      <p class="footer-credit">Developed and maintained by <a href="https://www.inevelop.org/" target="_blank" rel="noopener noreferrer">Inevelop Ventures</a></p>
+      <div class="faq-head">
+        <h2 class="section-title">FAQs</h2>
+        <p class="section-sub">Get all your questions answered about our services</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How do I book a puja online?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Simply select your puja type, preferred date, time, and location on our booking form at the top of the
+              page. Click "Find Priest" to view available verified priests in your area and confirm your booking in
+              minutes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How much does a priest booking cost?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Prices vary depending on the type of puja and duration. Our priests start from as low as ₹600 for simple
+              ceremonies. All pricing is transparent — no hidden charges. You can see the exact price before confirming
+              your booking.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How does cancellation/booking work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can cancel a booking up to 24 hours before the scheduled puja time for a full refund. Cancellations
+              within 24 hours may incur a small fee. To cancel, contact our support team via phone or email.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I schedule a booking in advance?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! You can schedule a puja booking up to 30 days in advance. We recommend booking early for festivals
+              like Durga Puja, Lakshmi Puja, and Diwali as our priests fill up quickly during peak seasons.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Are your services available across all of West Bengal?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We currently serve major cities and districts across West Bengal including Kolkata, Howrah, Durgapur,
+              Asansol, Siliguri, Burdwan, Medinipur, and more. We are expanding to new locations regularly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Why should I always choose PujaParban?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>PujaParban offers verified and experienced priests, transparent pricing, live tracking, and 24/7 customer
+              support. With 10,000+ happy families served and a 4.9-star average rating, we are West Bengal's most
+              trusted priest booking platform.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
+
+  <!-- ===== NEW SECTION: ABOUT PUJAPARBAN ===== -->
+  <div class="about-section">
+
+    <!-- 1. Logo/Icon -->
+    <div class="about-icon">
+      <!-- YAHAN APNI LOGO KI IMAGE KA URL DAAL DENA -->
+      <img src="https://placehold.co/55x55/transparent/E8650A?text=🪔" alt="PujaParban Logo">
+    </div>
+
+    <!-- 2. Blue Dashed Divider -->
+    <div class="about-divider"></div>
+
+    <!-- 3. Text Content -->
+    <div class="about-text">
+      <p>
+        <span class="brand-name">PujaParban</span> helps you book verified priests, pujas, and consultations online with
+        ease. Experience trusted religious services, transparent booking, and spiritual guidance—all from the comfort of
+        your home.
+      </p>
+    </div>
+
   </div>
-</footer>
 
-<!-- ===== SCRIPTS ===== -->
-<script>
-  // Mobile menu
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-  });
-  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+  <!-- ===== UPCOMING FESTIVALS ===== -->
+  <section class="section festival">
+    <div class="container-big">
 
-  // Priests carousel
-  function scrollPriests(dir) {
-    const track = document.getElementById('priestsScroll');
-    const card = track.querySelector('.priest-card');
-    const amount = card ? card.getBoundingClientRect().width + 24 : 300;
-    track.scrollBy({ left: dir * amount, behavior: 'smooth' });
-  }
+      <!-- Main Banner -->
+      <div class="festival-wrapper">
 
-  // Services carousel
-  function scrollServices(dir) {
-    const track = document.getElementById('servicesScroll');
-    const card = track.querySelector('.service-card');
-    const amount = card ? card.getBoundingClientRect().width + 24 : 300;
-    track.scrollBy({ left: dir * amount, behavior: 'smooth' });
-  }
+        <!-- Left Part -->
+        <div class="festival-left">
+          <h2 class="festival-heading">
+            Upcoming<br>
+            <span class="highlight">Festivals</span>
+          </h2>
+          <a href="#" class="festival-btn">View Festival Calendar &rarr;</a>
+        </div>
 
-  // Testimonial slider
-  let currentSlide = 0;
-  const totalSlides = 3;
+        <!-- Right Part (Cards) -->
+        <div class="festival-cards">
 
-  function goToSlide(n) {
-    document.getElementById('slide-' + currentSlide).style.display = 'none';
-    currentSlide = (n + totalSlides) % totalSlides;
-    document.getElementById('slide-' + currentSlide).style.display = 'flex';
-  }
+          <!-- Card 1 -->
+          <div class="festival-card">
+            <!-- YAHAN APNI IMAGE KA URL DAAL DENA -->
+            <img src="https://placehold.co/185x130/E8650A/FFFFFF?text=Rath+Yatra" alt="Rath Yatra"
+              class="festival-card-img">
+            <p class="festival-card-title">রথযাত্রা</p>
+            <p class="festival-card-subtitle">Starts in 7 Days</p>
+          </div>
 
-  function nextSlide() {
-    goToSlide(currentSlide + 1);
-  }
+          <!-- Card 2 -->
+          <div class="festival-card">
+            <img src="https://placehold.co/185x130/E8650A/FFFFFF?text=Rath+Yatra" alt="Rath Yatra"
+              class="festival-card-img">
+            <p class="festival-card-title">রথযাত্রা</p>
+            <p class="festival-card-subtitle">Starts in 7 Days</p>
+          </div>
 
-  function prevSlide() {
-    goToSlide(currentSlide - 1);
-  }
+          <!-- Card 3 -->
+          <div class="festival-card">
+            <img src="https://placehold.co/185x130/E8650A/FFFFFF?text=Rath+Yatra" alt="Rath Yatra"
+              class="festival-card-img">
+            <p class="festival-card-title">রথযাত্রা</p>
+            <p class="festival-card-subtitle">Starts in 7 Days</p>
+          </div>
 
-  setInterval(nextSlide, 6000);
+          <!-- Card 4 -->
+          <div class="festival-card">
+            <img src="https://placehold.co/185x130/E8650A/FFFFFF?text=Rath+Yatra" alt="Rath Yatra"
+              class="festival-card-img">
+            <p class="festival-card-title">রথযাত্রা</p>
+            <p class="festival-card-subtitle">Starts in 7 Days</p>
+          </div>
 
-  // FAQ accordion
-  function toggleFaq(btn) {
-    const item = btn.parentElement;
-    const answer = item.querySelector('.faq-answer');
-    const isOpen = btn.classList.contains('open');
+        </div>
 
-    // Close all
-    document.querySelectorAll('.faq-question.open').forEach(q => {
-      q.classList.remove('open');
-      q.parentElement.querySelector('.faq-answer').classList.remove('open');
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== APP SECTION ===== -->
+  <!-- <section class="section app-section">
+    <div class="container">
+      <div class="app-grid">
+        <div class="app-content">
+          <h2>Book on the go!<br />Download PujaParban App</h2>
+          <p>Get the app for a better experience and easy booking. Available on both Android and iOS.</p>
+          <div class="store-btns">
+            <a href="#" class="store-btn" onclick="alert('App coming soon on Play Store!')">
+              <span class="store-icon">▶</span>
+              <div>
+                <small>GET IT ON</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+            <a href="#" class="store-btn" onclick="alert('App coming soon on App Store!')">
+              <span class="store-icon">🍎</span>
+              <div>
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="app-phones">
+          <div class="phone-mockup">📱</div>
+          <div class="phone-mockup">📲</div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+
+          <div class="footer-brand">
+            <a class="nav-brand" href="index.html">
+              <img src="assets/logo-header.png" alt="Puja Parban" class="nav-logo" />
+            </a>
+            <p class="footer-desc">PujaParban বিশ্বাস, ঐতিহ্য ও প্রযুক্তির এক সেতুবন্ধন। আমাদের লক্ষ্য হলো প্রতিটি ঘর
+              সহজে ও নির্ভরতার সাথে পূজা ও ধর্মীয় সেবা পৌঁছে দেওয়া।</p>
+            <div class="footer-socials">
+              <a href="#" class="social-btn social-fb" title="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.87.24-1.46 1.5-1.46h1.6V4.3c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.42-3.9 4.02v2.24H7.8v3h2.6V21h3.1Z" />
+                </svg>
+              </a>
+              <a href="#" class="social-btn social-ig" title="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.2" cy="6.8" r="1" />
+                </svg>
+              </a>
+              <a href="#" class="social-btn social-yt" title="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 7.5v9l7.5-4.5L9 7.5Z" />
+                </svg>
+              </a>
+              <a href="#" class="social-btn social-wa" title="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#booking-form">Book a Puja</a></li>
+              <li><a href="#priests">Book a Priest</a></li>
+              <li><a href="#priests">Our Priests</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Contact Us</h5>
+            <div class="footer-contact-item">
+              <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>+91 7047725722</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m2 6 10 7L22 6"></path>
+              </svg>
+              <span>support@pujaparban.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Kolkata, West Bengal, India</span>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h5>Newsletter</h5>
+            <p class="footer-newsletter-sub">Subscribe to Get Updates</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Enter Your Email" />
+              <button onclick="alert('Subscribed! Thank you.')">Subscribe</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="footer-bottom">
+      <div class="container">
+        <!-- <p>© Copyright Puja Parban All Rights Reserved</p> -->
+        <p class="footer-credit">Developed and maintained by <a href="https://www.inevelop.org/" target="_blank"
+            rel="noopener noreferrer">Inevelop Ventures</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
     });
+    function closeMobileMenu() { mobileMenu.classList.remove('open'); }
 
-    // Open clicked if it was closed
-    if (!isOpen) {
-      btn.classList.add('open');
-      answer.classList.add('open');
+    // Priests carousel
+    function scrollPriests(dir) {
+      const track = document.getElementById('priestsScroll');
+      const card = track.querySelector('.priest-card');
+      const amount = card ? card.getBoundingClientRect().width + 24 : 300;
+      track.scrollBy({ left: dir * amount, behavior: 'smooth' });
     }
-  }
 
-  // Smooth active nav link on scroll
-  const sections = document.querySelectorAll('section[id], div[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    // Services carousel
+    function scrollServices(dir) {
+      const track = document.getElementById('servicesScroll');
+      const card = track.querySelector('.service-card');
+      const amount = card ? card.getBoundingClientRect().width + 24 : 300;
+      track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    }
+
+    // Testimonial slider
+    let currentSlide = 0;
+    const totalSlides = 3;
+
+    function goToSlide(n) {
+      document.getElementById('slide-' + currentSlide).style.display = 'none';
+      currentSlide = (n + totalSlides) % totalSlides;
+      document.getElementById('slide-' + currentSlide).style.display = 'flex';
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    setInterval(nextSlide, 6000);
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = btn.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-question.open').forEach(q => {
+        q.classList.remove('open');
+        q.parentElement.querySelector('.faq-answer').classList.remove('open');
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        btn.classList.add('open');
+        answer.classList.add('open');
+      }
+    }
+
+    // Smooth active nav link on scroll
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
     });
-    navLinks.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-  });
-</script>
+  </script>
 
 </body>
+
 </html>
