@@ -1,5 +1,14 @@
 /* ===== PUJAPARBAN — PRIMARY STYLES ===== */
-@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&display=swap');
+
+/* ===== VARIABLE FONT — ANEK BANGLA ===== */
+@font-face {
+  font-family: 'Anek Bangla';
+  src: url('assets/fonts/AnekBangla-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-weight: 100 800;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ===== BENGALI FONT — AKHAND BENGALI ===== */
 @font-face {
@@ -1606,7 +1615,7 @@ button {
 
 /* ===== BLOG ===== */
 .blog-section {
-  background: var(--cream);
+  background: #FEE1CD;
 }
 
 .blog-header {
@@ -1652,6 +1661,12 @@ button {
   overflow: hidden;
 }
 
+.blog-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .blog-date {
   position: absolute;
   top: 12px;
@@ -1669,16 +1684,20 @@ button {
 }
 
 .blog-content h4 {
+  font-family: "Akhand Bengali", sans-serif;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 8px;
   line-height: 1.45;
+  color: var(--primary);
 }
 
 .blog-content p {
+  font-family: "Anek Bangla", sans-serif;
   font-size: .85rem;
-  color: var(--text-muted);
+  color: "black";
   margin-bottom: 14px;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -1703,14 +1722,20 @@ button {
 
 .faq-head .section-title {
   justify-content: center;
+  font-family: 'Adoha', system-ui, sans-serif;
+  font-size: 38px;
+  /* font-size: 50px; */
 }
 
 .faq-head .section-title::after {
   display: none;
 }
 
-.faq-head .section-sub {
+
+.faq-head .section-sub .p {
   margin-bottom: 0;
+  font-family: 'HelveticaNeue', sans-serif;
+  font-weight: 400;
 }
 
 .faq-list {
@@ -2010,17 +2035,10 @@ button {
   gap: 40px;
 }
 
-.footer-logo {
-  font-family: 'Adoha', 'Akhand Bengali', system-ui, sans-serif;
-  font-size: 1.7rem;
-  font-weight: 800;
-  color: var(--white);
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.footer-logo span {
-  color: var(--primary);
+.footer-nav {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
 }
 
 .footer-logo-rule {
@@ -2039,13 +2057,14 @@ button {
 
 .footer-desc {
   font-size: 1rem;
-  line-height: 2;
+  line-height: 1.6;
   opacity: .65;
-  margin-bottom: 26px;
+  margin-bottom: 20px;
   margin-top: 2rem;
-  font-weight: 700;
-  color: var(--white);
+  
+  color: #ffff;
   transition: all var(--transition);
+  font-family: 'Anek Bangla';
 }
 
 .footer-socials {
@@ -2255,6 +2274,11 @@ button {
     font-size: 25px;
     line-height: 1.6;
     max-width: 1000px;
+}
+
+.about-text p {
+    font-weight: 300;
+    color: #454545;
 }
 
 .about-text .brand-name {
