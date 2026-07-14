@@ -919,10 +919,12 @@ button {
 }
 
 .priest-info h4 {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 6px;
   line-height: 1.3;
+  font-family: 'HelveticaNeue', sans-serif;
+  color: var(--primary);
 }
 
 .priest-rating {
@@ -935,14 +937,15 @@ button {
 }
 
 .priest-rating .stars {
-  color: var(--gold);
+  color: var(--primary);
   letter-spacing: 1px;
-  font-size: .85rem;
+  font-size: 18px;
 }
 
 .priest-rating .rating-num {
   font-weight: 700;
   color: var(--primary);
+  font-family: 'HelveticaNeue', sans-serif;
 }
 
 .priest-exp {
@@ -954,7 +957,8 @@ button {
 
 .priest-speciality {
   font-size: .8rem;
-  color: var(--text-muted);
+  font-weight: 700;
+  color: var(--text);
   margin-bottom: 14px;
 }
 
@@ -972,6 +976,7 @@ button {
   font-weight: 700;
   font-size: .88rem;
   transition: var(--transition);
+  font-family: 'Adoha', system-ui, sans-serif;
 }
 
 .btn-book-puja {
@@ -1107,6 +1112,7 @@ button {
 .hiw-step-icon svg {
   width: 34px;
   height: 34px;
+  color: var(--primary);
 }
 
 .hiw-step-text {
@@ -1115,16 +1121,20 @@ button {
 }
 
 .hiw-step-text h4 {
-  font-size: .92rem;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 2px;
+  font-family: 'Adoha', 'Akhand Bengali', system-ui, sans-serif;
+
 }
 
 .hiw-step-text p {
-  font-size: .74rem;
-  color: var(--text-muted);
+  font-size: 12px;
+  color: var(--text);
   line-height: 1.4;
+  font-family: 'HelveticaNeue', sans-serif;
+  font-weight: 500
 }
 
 .hiw-step-num {
@@ -1243,6 +1253,7 @@ button {
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 12px;
+  font-family: 'HelveticaNeue', sans-serif;
 }
 
 .service-card-meta {
@@ -2547,6 +2558,11 @@ button {
 
   .trust-item {
     padding: 0 12px;
+  }
+
+   .trust-item h4 {
+    font-family: 'HelveticaNeue', sans-serif;
+    font-weight: 600;
   }
 
   .trust-item+.trust-item::before {
