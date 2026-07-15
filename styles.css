@@ -632,24 +632,31 @@ button {
 }
 
 .form-group label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  display: block;
   font-size: 10px;
   font-weight: 600;
   color: var(--text-muted);
   margin-bottom: 6px;
+  font-family: 'HelveticaNeue', sans-serif;
+}
+
+.form-group-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .form-icon {
-  width: 14px;
-  height: 14px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
   color: var(--text-muted);
 }
 
 .form-group select,
 .form-group input {
+  flex: 1;
+  min-width: 0;
   width: 100%;
   padding: 10px 14px;
   border: 1.5px solid var(--border);
@@ -660,6 +667,7 @@ button {
   background: var(--white);
   transition: border-color var(--transition);
   color: var(--text);
+  font-family: 'HelveticaNeue', sans-serif;
 }
 
 .form-group select:focus,
@@ -818,6 +826,7 @@ button {
   font-size: 1.05rem;
   color: var(--text-muted);
   margin-bottom: 24px;
+  font-family: 'HelveticaNeue', sans-serif;
 }
 
 .priests-viewall {
@@ -954,6 +963,12 @@ button {
 .priest-rating .rating-num {
   font-weight: 700;
   color: var(--primary);
+  font-family: 'HelveticaNeue', sans-serif;
+}
+
+.priest-rating .rating-count {
+  font-weight: 700;
+ 
   font-family: 'HelveticaNeue', sans-serif;
 }
 
@@ -1652,6 +1667,10 @@ button {
 
 .blog-header .section-title {
   margin-bottom: 0;
+}
+
+.blog-header .section-title::after {
+  display: none;
 }
 
 .blog-title-highlight {
@@ -2402,17 +2421,64 @@ button {
   color: var(--white);
 }
 
-/* Right Side (Cards) */
+/* Right Side (Cards) — manual carousel */
+.festival-carousel {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.festival-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.festival-nav:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.festival-nav svg {
+  width: 18px;
+  height: 18px;
+}
+
+.festival-nav-prev {
+  left: -18px;
+}
+
+.festival-nav-next {
+  right: -18px;
+}
+
 .festival-cards {
   display: flex;
   gap: 16px;
-  flex: 1;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.festival-cards::-webkit-scrollbar {
+  display: none;
 }
 
 /* Single Card */
 .festival-card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
   background: var(--white);
   border-radius: var(--radius);
   /* 12px */
@@ -2458,17 +2524,12 @@ button {
     padding: 32px;
   }
 
-  .festival-cards {
-    justify-content: flex-start;
+  .festival-carousel {
     width: 100%;
   }
 }
 
 @media (max-width: 600px) {
-  .festival-cards {
-    justify-content: center;
-  }
-
   .festival-heading {
     font-size: 32px;
   }
