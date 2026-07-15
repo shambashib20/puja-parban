@@ -2124,15 +2124,18 @@ button {
   color: var(--white);
   margin-bottom: 18px;
   font-size: 1.5rem;
+  font-family: 'HelveticaNeue', sans-serif;
 }
 
 .footer-col ul li {
   margin-bottom: 12px;
+  font-family: 'HelveticaNeue', sans-serif;
 }
 
 .footer-col ul li a {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
+  font-family: 'HelveticaNeue', sans-serif;
   opacity: 1;
   color: var(--white);
   transition: all var(--transition);
@@ -2151,6 +2154,7 @@ button {
   font-weight: 700;
   font-size: 1rem;
   opacity: .9;
+  font-family: 'HelveticaNeue', sans-serif;
   color: var(--white);
   transition: all var(--transition);
 }
@@ -2168,6 +2172,7 @@ button {
   margin-bottom: 16px;
   color: var(--white);
   transition: all var(--transition);
+  font-family: 'HelveticaNeue', sans-serif;
 }
 
 .newsletter-form {
