@@ -1826,16 +1826,15 @@ button {
 }
 
 .faq-icon {
-  font-size: 1.4rem;
-  font-weight: 300;
-  color: var(--primary);
+  width: 15px;
+  height: 7px;
   transition: transform var(--transition);
   flex-shrink: 0;
   line-height: 1;
 }
 
 .faq-question.open .faq-icon {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 
 .faq-answer {
