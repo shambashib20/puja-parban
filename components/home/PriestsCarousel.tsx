@@ -1,9 +1,9 @@
 "use client";
 
-import { priests } from "@/lib/data/priests";
+import type { Priest } from "@/lib/types";
 import { useHorizontalCarousel } from "@/hooks/useHorizontalCarousel";
 
-export function PriestsCarousel() {
+export function PriestsCarousel({ priests }: { priests: Priest[] }) {
   const { trackRef, scroll } = useHorizontalCarousel({ cardSelector: ".priest-card" });
 
   return (

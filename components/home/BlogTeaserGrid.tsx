@@ -31,7 +31,7 @@ export function BlogTeaserGrid({ posts }: { posts: BlogPostSummary[] }) {
                 <div className="blog-content">
                   <h4>{post.title}</h4>
                   <p>{post.excerpt}</p>
-                  <Link href={`/blog/${post.slug}`} className="blog-read">
+                  <Link href={`/blog/${encodeURIComponent(post.slug)}`} className="blog-read">
                     Read More →
                   </Link>
                 </div>

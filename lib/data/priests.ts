@@ -1,5 +1,23 @@
 import type { Priest } from "@/lib/types";
+import { fetchAdminApi, type CarouselPage } from "@/lib/adminApi";
 
+interface AdminPujaType {
+  slug: string;
+  nameEn: string;
+  nameBn: string;
+}
+
+interface AdminPriestListItem {
+  _id: string;
+  name: string;
+  photoUrl?: string;
+  rating: number;
+  ratingCount: number;
+  yearsExperience?: number;
+  pujaTypeSlugs: string[];
+}
+
+/** Local placeholder cards, used when the admin CMS is unreachable or has no active priests yet. */
 export const priests: Priest[] = [
   {
     id: "sourav-chattopadhyay",
@@ -52,3 +70,29 @@ export const priests: Priest[] = [
     speciality: "Namkaran, Annaprashan",
   },
 ];
+
+export async function getPriests(): Promise<Priest[]> {
+  const [priestsPage, pujaTypesPage] = await Promise.all([
+    fetchAdminApi<CarouselPage<AdminPriestListItem>>("/api/public/priests?limit=12"),
+    fetchAdminApi<CarouselPage<AdminPujaType>>("/api/public/puja-types?limit=50"),
+  ]);
+
+  if (!priestsPage || priestsPage.items.length === 0) {
+    return priests;
+  }
+
+  const pujaTypeNameBySlug = new Map(
+    (pujaTypesPage?.items ?? []).map((pujaType) => [pujaType.slug, pujaType.nameEn || pujaType.nameBn])
+  );
+
+  return priestsPage.items.map((priest) => ({
+    id: priest._id,
+    name: priest.name,
+    photo: priest.photoUrl || "/assets/purohit_1.png",
+    rating: Math.round(priest.rating),
+    ratingLabel: `${priest.rating.toFixed(1)} Rating`,
+    reviewCount: priest.ratingCount,
+    experience: priest.yearsExperience ? `${priest.yearsExperience}+ Years Experience` : "Experienced Priest",
+    speciality: priest.pujaTypeSlugs.map((slug) => pujaTypeNameBySlug.get(slug) || slug).join(", "),
+  }));
+}

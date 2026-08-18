@@ -12,16 +12,17 @@ import { FaqAccordion } from "@/components/home/FaqAccordion";
 import { AboutStrip } from "@/components/home/AboutStrip";
 import { FestivalsCarousel } from "@/components/home/FestivalsCarousel";
 import { getBlogPostSummaries } from "@/lib/data/blogPosts";
+import { getPriests } from "@/lib/data/priests";
 
 export default async function HomePage() {
-  const blogPosts = await getBlogPostSummaries();
+  const [blogPosts, priests] = await Promise.all([getBlogPostSummaries(), getPriests()]);
 
   return (
     <>
       <Header />
       <Hero />
       <TrustBar />
-      <PriestsCarousel />
+      <PriestsCarousel priests={priests} />
       <HowItWorks />
       <ServicesCarousel />
       <DivineCta />
