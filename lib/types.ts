@@ -52,16 +52,11 @@ export interface BlogPostSummary {
   imageAlt: string;
 }
 
-export interface BlogPostBody {
-  type: "p" | "h2" | "h3" | "ul";
-  text?: string;
-  items?: string[];
-}
-
 export interface BlogPost extends BlogPostSummary {
   lang: "bn" | "en";
   breadcrumbLabel: string;
-  body: BlogPostBody[];
+  /** Sanitized rich-text HTML from the CMS editor (h1/h2/h3/p/ul/table/...). */
+  bodyHtml: string;
 }
 
 export interface BookingFormOptions {
