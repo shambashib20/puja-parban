@@ -1,4 +1,4 @@
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 import type { BlogPost, BlogPostSummary } from "@/lib/types";
 import rawBlogPosts from "./blogPosts.json";
 import { fetchAdminApi, type CarouselPage } from "@/lib/adminApi";
@@ -68,15 +68,52 @@ interface AdminBlogDetail extends AdminBlogListItem {
   bodyEn?: string;
 }
 
+// Mirrors puja-parban-admin/server/src/lib/sanitizeHtml.ts's allowlist - the
+// admin API already sanitizes on save, this is defense-in-depth on read.
+// Deliberately avoids isomorphic-dompurify/jsdom: jsdom's html-encoding-sniffer
+// dependency does a require() of an ESM-only module, which crashes at import
+// time under Vercel's serverless bundling.
+const ALLOWED_TAGS = [
+  "h1", "h2", "h3", "h4", "h5", "h6",
+  "p", "br", "hr",
+  "strong", "b", "em", "i", "u", "s", "strike", "sub", "sup", "mark",
+  "ul", "ol", "li",
+  "a", "img",
+  "blockquote", "code", "pre",
+  "table", "thead", "tbody", "tr", "th", "td",
+  "span", "div",
+];
+
+const ALLOWED_ATTRIBUTES: sanitizeHtml.IOptions["allowedAttributes"] = {
+  a: ["href", "name", "target", "rel"],
+  img: ["src", "alt", "title", "width", "height"],
+  th: ["colspan", "rowspan"],
+  td: ["colspan", "rowspan"],
+  "*": ["style", "class"],
+};
+
+const ALLOWED_STYLES: sanitizeHtml.IOptions["allowedStyles"] = {
+  "*": {
+    color: [/^#[0-9a-fA-F]{3,8}$/, /^rgb\(.*\)$/],
+    "background-color": [/^#[0-9a-fA-F]{3,8}$/, /^rgb\(.*\)$/],
+    "text-align": [/^left$|^right$|^center$|^justify$/],
+  },
+};
+
 /**
  * The CMS editor already produces well-formed HTML (h1/h2/h3/p/ul/table/hr/...).
  * Sanitize it and render it as-is so every tag renders as its own element
  * instead of being flattened into plain paragraphs.
  */
 function sanitizeBodyHtml(html: string): string {
-  const clean = DOMPurify.sanitize(html, {
-    USE_PROFILES: { html: true },
-    ADD_ATTR: ["target", "rel"],
+  const clean = sanitizeHtml(html, {
+    allowedTags: ALLOWED_TAGS,
+    allowedAttributes: ALLOWED_ATTRIBUTES,
+    allowedStyles: ALLOWED_STYLES,
+    allowedSchemes: ["http", "https", "mailto"],
+    transformTags: {
+      a: sanitizeHtml.simpleTransform("a", { rel: "noopener noreferrer" }, true),
+    },
   });
   // The article shell already renders the post title as the page's <h1>;
   // drop a leading <h1> from the CMS body so the title isn't duplicated.
