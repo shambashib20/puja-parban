@@ -23,17 +23,17 @@ export interface CarouselPage<T> {
 }
 
 /**
- * Fetches from the admin API, cached at the edge/ISR layer for 60s to match
- * the API's own `Cache-Control: max-age=60`. Returns `null` on any failure
- * (admin backend down, network error, non-2xx) so callers can fall back to
- * bundled placeholder data instead of breaking the page.
+ * Fetches from the admin API with no caching - every call hits the admin
+ * backend fresh, so a newly published/unpublished blog or priest is live on
+ * the next page load with no cache window to wait out. Returns `null` on
+ * any failure (admin backend down, network error, non-2xx) so callers can
+ * fall back to bundled placeholder data instead of breaking the page.
  */
 export async function fetchAdminApi<T>(path: string): Promise<T | null> {
   try {
     const res = await fetch(`${ADMIN_API_URL}${path}`, {
-      next: { revalidate: 60 },
+      cache: "no-store",
     });
-    console.warn(`res`, res);
     if (!res.ok) return null;
     return (await res.json()) as T;
   } catch {
